@@ -1,0 +1,278 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
+import '../utils/Colors.dart';
+
+class HistoryPage extends StatefulWidget {
+  const HistoryPage({Key? key}) : super(key: key);
+
+  @override
+  State<HistoryPage> createState() => _HistoryPageState();
+}
+
+class _HistoryPageState extends State<HistoryPage>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(vsync: this, length: 2);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0xffFAF9F9),
+        appBar: NewGradientAppBar(
+          title: Text(
+            'History',
+            style: TextStyle(
+              color: AppColors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          leading: Icon(
+            Icons.sort,
+            color: AppColors.white,
+          ),
+          centerTitle: true,
+          actions: [
+            Icon(
+              Icons.search,
+              color: AppColors.white,
+              size: 35,
+            ),
+            CircleAvatar(
+              backgroundImage: NetworkImage(
+                'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
+              ),
+            ),
+            SizedBox(width: width / 15)
+          ],
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xff318AC4),
+              Color(0xff4CA37C),
+            ],
+          ),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: height * 0.02),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: width / 15),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(255, 213, 214, 218),
+                        spreadRadius: 0,
+                        blurRadius: 5,
+                        offset: Offset(3, 5),
+                      ),
+                    ],
+                  ),
+                  child: TabBar(
+                    controller: _tabController,
+                    isScrollable: true,
+                    indicator: UnderlineTabIndicator(
+                      borderSide: BorderSide(
+                        width: 10.0,
+                        color: Color(0xff3756CF),
+                      ),
+                    ),
+                    tabs: [
+                      Container(
+                        height: height * 0.07,
+                        width: width * 0.4,
+                        child: Center(
+                          child: Text(
+                            'Points',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xffE37A29),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: height * 0.07,
+                        width: width * 0.4,
+                        child: Center(
+                          child: Text(
+                            'Stamps',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xff1E130B),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                height: height,
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    //points
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                        ],
+                      ),
+                    ),
+
+                    //stamps
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/images/Vector.svg'),
+              label: 'Overview',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/images/calendar.svg'),
+              label: 'This Month',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/images/ticket.svg'),
+              label: 'Offers',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/images/settings.svg'),
+              label: 'Settings',
+            ),
+          ],
+          currentIndex: 1,
+          selectedItemColor: Color(0xff6347EB),
+          // onTap: _onItemTapped,
+        ),
+      ),
+    );
+  }
+}
+
+class EarnPointsWidget extends StatelessWidget {
+  const EarnPointsWidget({
+    Key? key,
+    required this.width,
+    required this.height,
+  }) : super(key: key);
+
+  final double width;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        left: width / 15,
+        right: width / 15,
+        top: height * 0.03,
+      ),
+      child: Container(
+        width: width * 1,
+        height: height * 0.09,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: Color(0xffEFF1FF).withOpacity(0.75),
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(255, 174, 226, 241),
+              spreadRadius: 0,
+              blurRadius: 10,
+              offset: Offset(5, 5),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: width * 0.05),
+              child: Image.asset('assets/images/foodpanda.png'),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: width * 0.1),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Review this item for',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        '10 ',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Color(0xffE37A29),
+                        ),
+                      ),
+                      Text(
+                        'points !',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
