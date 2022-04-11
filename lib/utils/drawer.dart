@@ -27,74 +27,52 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
             child: ListView(
-              padding: EdgeInsets.only(right: 50),
+              padding: EdgeInsets.only(right: width * 0.08),
               children: [
-                SizedBox(
-                  height: height / 30,
-                ),
+                SizedBox(height: height / 30),
                 Center(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Demo Hub",
-                      style: TextStyle(color: Colors.white70),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                 ),
                 ListTile(
-                  onTap: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (_) => home(),
-                    //   ),
-                    // );
-                  },
                   horizontalTitleGap: .1,
                   title: Text(
                     "Home",
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w200,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
                 ListTile(
-                  onTap: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (_) => profile_settigns(),
-                    //   ),
-                    // );
-                  },
                   horizontalTitleGap: .1,
                   title: Text(
                     "Feed",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w200,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
                 ListTile(
-                  onTap: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (_) => SteppeScreen(),
-                    //   ),
-                    // );
-                  },
                   horizontalTitleGap: .1,
                   title: Text(
                     "Notice",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w200,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
@@ -104,8 +82,8 @@ class CustomDrawer extends StatelessWidget {
                     "Points",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w200,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
@@ -115,8 +93,8 @@ class CustomDrawer extends StatelessWidget {
                     "Offer",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w200,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
@@ -126,8 +104,8 @@ class CustomDrawer extends StatelessWidget {
                     "Statistics",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w200,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
@@ -137,8 +115,8 @@ class CustomDrawer extends StatelessWidget {
                     "More",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w200,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
@@ -161,7 +139,7 @@ class CustomDrawer extends StatelessWidget {
                   ],
                 ),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
+                  topLeft: Radius.circular(300),
                 ),
               ),
             ),
