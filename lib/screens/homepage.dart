@@ -1,7 +1,7 @@
-
 import 'package:codecell_marchant_happ_app/screens/points_page.dart';
 import 'package:codecell_marchant_happ_app/screens/received_coupons.dart';
 import 'package:codecell_marchant_happ_app/screens/tasks_page.dart';
+import 'package:codecell_marchant_happ_app/utils/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,8 +12,23 @@ import 'add_voucher_coupon.dart';
 import 'history_page_pointsstamps.dart';
 import 'restaurants_page.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
+
+  TabController? _controller;
+  @override
+  void initState() {
+    super.initState();
+    _controller = new TabController(length: 1, vsync: this);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +36,8 @@ class HomeScreen extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
+        key: _key,
+        drawer: CustomDrawer(height: height, width: width),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,10 +105,16 @@ class HomeScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Icon(
-                              Icons.sort,
-                              color: Colors.white,
-                              size: 36,
+                            GestureDetector(
+                              onTap: () {
+                                _key.currentState!.openDrawer();
+                                print('tapped');
+                              },
+                              child: Icon(
+                                Icons.sort,
+                                color: Colors.white,
+                                size: 36,
+                              ),
                             ),
                             Text(
                               'Total Points 100',
@@ -843,6 +866,29 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: height * 0.015),
             ],
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/images/Vector.svg'),
+              label: 'Overview',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/images/calendar.svg'),
+              label: 'This Month',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/images/ticket.svg'),
+              label: 'Offers',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/images/settings.svg'),
+              label: 'Settings',
+            ),
+          ],
+          currentIndex: 1,
+          selectedItemColor: Color(0xff6347EB),
+          // onTap: _onItemTapped,
         ),
       ),
     );
