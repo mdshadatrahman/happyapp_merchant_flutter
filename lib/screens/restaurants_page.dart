@@ -182,7 +182,6 @@ class _RestaurantsState extends State<Restaurants> {
             //Card End
           ],
         ),
-        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

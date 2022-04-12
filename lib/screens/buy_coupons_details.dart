@@ -478,7 +478,6 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
             )
           ],
         ),
-        bottomNavigationBar:const CustomBottomNavigationBar(),
       ),
     );
   }

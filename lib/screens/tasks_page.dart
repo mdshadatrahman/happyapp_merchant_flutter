@@ -1,6 +1,7 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:codecell_marchant_happ_app/utils/drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
 
 import '../utils/Colors.dart';
@@ -218,37 +219,8 @@ class _TasksPageState extends State<TasksPage>
                                         child: Column(
                                           children: [
                                             SizedBox(height: height * 0.04),
-                                            Container(
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal: width / 20,
-                                              ),
-                                              height: height * 0.1,
-                                              width: width * 0.8,
-                                              decoration: BoxDecoration(
-                                                color: const Color(0xffEFF1FF),
-                                                borderRadius:
-                                                    BorderRadius.circular(23),
-                                              ),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: const [
-                                                  Text(
-                                                    'Lorem ipsum dummy text for the\noffer region and enable options',
-                                                    style: TextStyle(
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                    ),
-                                                  ),
-                                                  Icon(Icons.arrow_drop_down)
-                                                ],
-                                              ),
-                                            ),
 
                                             //Facebook
-                                            SizedBox(height: height * 0.03),
                                             Container(
                                               height: height * 0.1,
                                               width: width * 0.8,
@@ -276,7 +248,7 @@ class _TasksPageState extends State<TasksPage>
                                                         ),
                                                       ),
                                                       Row(
-                                                        children: [
+                                                        children: const [
                                                           Text(
                                                             '10 ',
                                                             style: TextStyle(
@@ -285,7 +257,7 @@ class _TasksPageState extends State<TasksPage>
                                                               fontSize: 18,
                                                             ),
                                                           ),
-                                                          const Text(
+                                                          Text(
                                                             'points !',
                                                             style: TextStyle(
                                                               fontSize: 14,
@@ -295,6 +267,33 @@ class _TasksPageState extends State<TasksPage>
                                                       )
                                                     ],
                                                   ),
+                                                  Padding(
+                                                    padding: EdgeInsets.only(
+                                                      top: height * 0.05,
+                                                      left: width * 0.07,
+                                                    ),
+                                                    child: Container(
+                                                      color: AppColors.orange,
+                                                      child: Padding(
+                                                        padding: EdgeInsets
+                                                            .symmetric(
+                                                          horizontal:
+                                                              width * 0.01,
+                                                          vertical:
+                                                              height * 0.002,
+                                                        ),
+                                                        child: const Text(
+                                                          'Ongoing',
+                                                          style: TextStyle(
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            color: Colors.white,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  )
                                                 ],
                                               ),
                                             ),
@@ -328,7 +327,7 @@ class _TasksPageState extends State<TasksPage>
                                                         ),
                                                       ),
                                                       Row(
-                                                        children: [
+                                                        children: const [
                                                           Text(
                                                             '10 ',
                                                             style: TextStyle(
@@ -337,7 +336,7 @@ class _TasksPageState extends State<TasksPage>
                                                               fontSize: 18,
                                                             ),
                                                           ),
-                                                          const Text(
+                                                          Text(
                                                             'points !',
                                                             style: TextStyle(
                                                               fontSize: 14,
@@ -347,6 +346,36 @@ class _TasksPageState extends State<TasksPage>
                                                       )
                                                     ],
                                                   ),
+                                                  Padding(
+                                                    padding: EdgeInsets.only(
+                                                      top: height * 0.05,
+                                                      left: width * 0.07,
+                                                    ),
+                                                    child: Container(
+                                                      width: width * 0.15,
+                                                      color: AppColors.red,
+                                                      child: Padding(
+                                                        padding: EdgeInsets
+                                                            .symmetric(
+                                                          horizontal:
+                                                              width * 0.01,
+                                                          vertical:
+                                                              height * 0.002,
+                                                        ),
+                                                        child: const Text(
+                                                          'Draft',
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: TextStyle(
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            color: Colors.white,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  )
                                                 ],
                                               ),
                                             ),
@@ -419,45 +448,208 @@ class _TasksPageState extends State<TasksPage>
                                                 borderRadius:
                                                     BorderRadius.circular(23),
                                               ),
-                                              child: Stack(
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
                                                 children: [
-                                                  Positioned(
-                                                    left: width * 0.02,
-                                                    top: height * 0.03,
-                                                    child: const Text(
-                                                      'Lorem ipsum dummy text for the offer\nregion and enable options',
-                                                      style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                                  SizedBox(width: width * 0.25),
+                                                  const Text(
+                                                    'Create an offer',
+                                                    style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w600,
                                                     ),
                                                   ),
-                                                  Positioned(
-                                                    left: width * 0.55,
-                                                    top: height * 0.055,
-                                                    child: SizedBox(
-                                                      height: height * 0.03,
-                                                      width: width * 0.15,
-                                                      child: TextButton(
-                                                        onPressed: () {},
-                                                        style: TextButton
-                                                            .styleFrom(
-                                                          backgroundColor:
-                                                              const Color(
-                                                            0xff4B99C4,
-                                                          ),
-                                                        ),
-                                                        child: const Text(
-                                                          'Edit',
-                                                          style: TextStyle(
-                                                            color: Colors.white,
-                                                            fontSize: 10,
-                                                          ),
+                                                  SizedBox(width: width * 0.1),
+                                                  const Icon(
+                                                    Icons.arrow_drop_down,
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+
+                                            //Facebook
+                                            SizedBox(height: height * 0.03),
+                                            Container(
+                                              height: height * 0.1,
+                                              width: width * 0.8,
+                                              decoration: BoxDecoration(
+                                                color: const Color(0xffEFF1FF),
+                                                borderRadius:
+                                                    BorderRadius.circular(23),
+                                              ),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Image.asset(
+                                                    'assets/images/blue.png',
+                                                  ),
+                                                  Column(
+                                                    children: [
+                                                      SizedBox(
+                                                        height: height * 0.03,
+                                                      ),
+                                                      const Text(
+                                                        'Offer text for random calls',
+                                                        style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.w600,
                                                         ),
                                                       ),
-                                                    ),
-                                                  )
+                                                      SizedBox(
+                                                          height:
+                                                              height * 0.01),
+                                                      Container(
+                                                        color: AppColors.orange,
+                                                        child: Padding(
+                                                          padding: EdgeInsets
+                                                              .symmetric(
+                                                            horizontal:
+                                                                width * 0.01,
+                                                            vertical:
+                                                                height * 0.002,
+                                                          ),
+                                                          child: const Text(
+                                                            'Show Details',
+                                                            style: TextStyle(
+                                                              fontSize: 12,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+
+                                            //Twitter
+                                            SizedBox(height: height * 0.03),
+                                            Container(
+                                              height: height * 0.1,
+                                              width: width * 0.8,
+                                              decoration: BoxDecoration(
+                                                color: const Color(0xffEFF1FF),
+                                                borderRadius:
+                                                    BorderRadius.circular(23),
+                                              ),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Image.asset(
+                                                    'assets/images/red.png',
+                                                  ),
+                                                  Column(
+                                                    children: [
+                                                      SizedBox(
+                                                        height: height * 0.03,
+                                                      ),
+                                                      const Text(
+                                                        'Offer text for random calls',
+                                                        style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                      ),
+                                                      SizedBox(
+                                                          height:
+                                                              height * 0.01),
+                                                      Container(
+                                                        color: AppColors.orange,
+                                                        child: Padding(
+                                                          padding: EdgeInsets
+                                                              .symmetric(
+                                                            horizontal:
+                                                                width * 0.01,
+                                                            vertical:
+                                                                height * 0.002,
+                                                          ),
+                                                          child: const Text(
+                                                            'Show Details',
+                                                            style: TextStyle(
+                                                              fontSize: 12,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            //Instagram
+                                            SizedBox(height: height * 0.03),
+                                            Container(
+                                              height: height * 0.1,
+                                              width: width * 0.8,
+                                              decoration: BoxDecoration(
+                                                color: const Color(0xffEFF1FF),
+                                                borderRadius:
+                                                    BorderRadius.circular(23),
+                                              ),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Image.asset(
+                                                    'assets/images/green.png',
+                                                  ),
+                                                  Column(
+                                                    children: [
+                                                      SizedBox(
+                                                        height: height * 0.03,
+                                                      ),
+                                                      const Text(
+                                                        'Offer text for random calls',
+                                                        style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                      ),
+                                                      SizedBox(
+                                                          height:
+                                                              height * 0.01),
+                                                      Container(
+                                                        color: AppColors.orange,
+                                                        child: Padding(
+                                                          padding: EdgeInsets
+                                                              .symmetric(
+                                                            horizontal:
+                                                                width * 0.01,
+                                                            vertical:
+                                                                height * 0.002,
+                                                          ),
+                                                          child: const Text(
+                                                            'Show Details',
+                                                            style: TextStyle(
+                                                              fontSize: 12,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
                                                 ],
                                               ),
                                             ),
@@ -857,7 +1049,6 @@ class _TasksPageState extends State<TasksPage>
             ],
           ),
         ),
-        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

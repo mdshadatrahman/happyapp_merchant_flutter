@@ -243,7 +243,6 @@ class _UploadingCouponPageState extends State<UploadingCouponPage>
             ),
           ],
         ),
-        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

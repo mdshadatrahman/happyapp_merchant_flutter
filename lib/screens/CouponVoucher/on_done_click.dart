@@ -197,7 +197,6 @@ class _OnDoneClickState extends State<OnDoneClick>
             ),
           ],
         ),
-        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

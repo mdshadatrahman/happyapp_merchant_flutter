@@ -215,7 +215,6 @@ class _BuyCouponsPaymentCompleteState extends State<BuyCouponsPaymentComplete> {
             elevation: 0,
           ),
         ),
-        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

@@ -177,7 +177,6 @@ class _ReceivedCouponsState extends State<ReceivedCoupons>
             ],
           ),
         ),
-        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

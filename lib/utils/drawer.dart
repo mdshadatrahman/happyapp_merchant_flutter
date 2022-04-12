@@ -1,3 +1,7 @@
+import 'package:codecell_marchant_happ_app/screens/homepage.dart';
+import 'package:codecell_marchant_happ_app/screens/our_offers.dart';
+import 'package:codecell_marchant_happ_app/screens/points_page.dart';
+import 'package:codecell_marchant_happ_app/screens/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -58,9 +62,12 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                const ListTile(
+                ListTile(
+                  onTap: () {
+                    Get.to(() => const HomeScreen());
+                  },
                   horizontalTitleGap: .1,
-                  title: Text(
+                  title: const Text(
                     "Home",
                     style: TextStyle(
                       color: Colors.white,
@@ -69,9 +76,12 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                const ListTile(
+                ListTile(
+                  onTap: () {
+                    Get.to(() => const SettingsPage());
+                  },
                   horizontalTitleGap: .1,
-                  title: Text(
+                  title: const Text(
                     "Feed",
                     style: TextStyle(
                       color: Colors.white,
@@ -80,9 +90,12 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                const ListTile(
+                ListTile(
+                  onTap: () {
+                    Get.to(() => const SettingsPage());
+                  },
                   horizontalTitleGap: .1,
-                  title: Text(
+                  title: const Text(
                     "Notice",
                     style: TextStyle(
                       color: Colors.white,
@@ -91,9 +104,12 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                const ListTile(
+                ListTile(
+                  onTap: () {
+                    Get.to(() => const PointsPage());
+                  },
                   horizontalTitleGap: .1,
-                  title: Text(
+                  title: const Text(
                     "Points",
                     style: TextStyle(
                       color: Colors.white,
@@ -102,9 +118,12 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                const ListTile(
+                ListTile(
+                  onTap: () {
+                    Get.to(() => const OurOfferPage());
+                  },
                   horizontalTitleGap: .1,
-                  title: Text(
+                  title: const Text(
                     "Offer",
                     style: TextStyle(
                       color: Colors.white,
@@ -113,9 +132,12 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                const ListTile(
+                ListTile(
+                  onTap: () {
+                    Get.to(() => const SettingsPage());
+                  },
                   horizontalTitleGap: .1,
-                  title: Text(
+                  title: const Text(
                     "Statistics",
                     style: TextStyle(
                       color: Colors.white,
@@ -124,9 +146,12 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                const ListTile(
+                ListTile(
+                  onTap: () {
+                    Get.to(() => const SettingsPage());
+                  },
                   horizontalTitleGap: .1,
-                  title: Text(
+                  title: const Text(
                     "More",
                     style: TextStyle(
                       color: Colors.white,

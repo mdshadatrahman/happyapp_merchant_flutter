@@ -213,7 +213,6 @@ class _UploadedVoucherState extends State<UploadedVoucher> {
             // )
           ],
         ),
-        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

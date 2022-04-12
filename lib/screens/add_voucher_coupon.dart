@@ -201,7 +201,6 @@ class _AddVoucherCouponState extends State<AddVoucherCoupon>
             ),
           ],
         ),
-        bottomNavigationBar:const CustomBottomNavigationBar(),
       ),
     );
   }

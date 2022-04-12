@@ -173,7 +173,6 @@ class _HistoryPagePurchaseState extends State<HistoryPagePurchase> {
             //Card End
           ],
         ),
-        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

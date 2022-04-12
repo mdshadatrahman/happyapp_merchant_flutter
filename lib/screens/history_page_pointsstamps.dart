@@ -179,7 +179,6 @@ class _HistoryPageState extends State<HistoryPage>
             ],
           ),
         ),
-        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }
