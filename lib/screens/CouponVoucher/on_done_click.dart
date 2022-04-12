@@ -1,22 +1,24 @@
-import 'package:codecell_marchant_happ_app/screens/CouponVoucher/uploading_coupon_page.dart';
 import 'package:codecell_marchant_happ_app/screens/uploaded_vouchers.dart';
 import 'package:codecell_marchant_happ_app/utils/drawer.dart';
+import 'package:codecell_marchant_happ_app/widgets/custom_ticket.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 
-import '../utils/Colors.dart';
-import '../widgets/custom_bottom_navigation.dart';
+import '../../utils/Colors.dart';
+import '../../widgets/custom_bottom_navigation.dart';
 
-class AddVoucherCoupon extends StatefulWidget {
-  const AddVoucherCoupon({Key? key}) : super(key: key);
+class OnDoneClick extends StatefulWidget {
+  const OnDoneClick({Key? key}) : super(key: key);
 
   @override
-  State<AddVoucherCoupon> createState() => _AddVoucherCouponState();
+  State<OnDoneClick> createState() => _OnDoneClickState();
 }
 
-class _AddVoucherCouponState extends State<AddVoucherCoupon>
+class _OnDoneClickState extends State<OnDoneClick>
     with SingleTickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   late TabController _tabController;
@@ -160,36 +162,35 @@ class _AddVoucherCouponState extends State<AddVoucherCoupon>
                   SingleChildScrollView(
                     child: Container(
                       child: GestureDetector(
-                        onTap: () {
-                          Get.to(() => UploadingCouponPage());
-                        },
-                        child: Stack(
+                        onTap: () {},
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Center(
-                              child: SvgPicture.asset(
-                                'assets/images/rectangle.svg',
+                            CustomTicket(width: width, height: height),
+                            Text(
+                              'Total Value X',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
-                            Padding(
-                              padding:
-                                  EdgeInsets.symmetric(vertical: width * 0.2),
-                              child: Column(
-                                children: [
-                                  Center(
-                                    child: Icon(
-                                      Icons.file_upload_outlined,
-                                      size: 50,
-                                    ),
-                                  ),
-                                  Text(
-                                    'upload from your gallery',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w400),
-                                  )
-                                ],
+                            SizedBox(height: height * 0.01),
+                            Text(
+                              'Total Points given Y',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
+                            SizedBox(height: height * 0.01),
+                            ElevatedButton(
+                              onPressed: () {},
+                              child: Text('Post Offer'),
+                              style: ElevatedButton.styleFrom(
+                                primary: Color(0xff4B99C4),
+                              ),
+                            )
                           ],
                         ),
                       ),

@@ -1,10 +1,12 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
+import 'package:codecell_marchant_happ_app/utils/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
 
 import '../utils/Colors.dart';
+import '../widgets/custom_bottom_navigation.dart';
 
 class TasksPage extends StatefulWidget {
   const TasksPage({Key? key}) : super(key: key);
@@ -16,6 +18,7 @@ class TasksPage extends StatefulWidget {
 class _TasksPageState extends State<TasksPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   void initState() {
@@ -35,6 +38,8 @@ class _TasksPageState extends State<TasksPage>
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
+        key: _key,
+        drawer: CustomDrawer(width: width, height: height),
         appBar: NewGradientAppBar(
           title: Text(
             'Task',
@@ -44,9 +49,14 @@ class _TasksPageState extends State<TasksPage>
               fontWeight: FontWeight.w500,
             ),
           ),
-          leading: Icon(
-            Icons.sort,
-            color: AppColors.white,
+          leading: GestureDetector(
+            onTap: () {
+              _key.currentState!.openDrawer();
+            },
+            child: Icon(
+              Icons.sort,
+              color: AppColors.white,
+            ),
           ),
           centerTitle: true,
           actions: [
@@ -844,145 +854,8 @@ class _TasksPageState extends State<TasksPage>
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/Vector.svg'),
-              label: 'Overview',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/calendar.svg'),
-              label: 'This Month',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/ticket.svg'),
-              label: 'Offers',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/settings.svg'),
-              label: 'Settings',
-            ),
-          ],
-          currentIndex: 1,
-          selectedItemColor: Color(0xff6347EB),
-          // onTap: _onItemTapped,
-        ),
+        bottomNavigationBar: CustomBottomNavigationBar(),
       ),
     );
   }
 }
-
-
-/**
- * Stack(
-                          children: [
-                            SvgPicture.asset('assets/images/rectangle101.svg'),
-                            Positioned(
-                              top: -height * 0.007,
-                              left: -width * 0.01,
-                              child: Stack(
-                                children: [
-                                  SvgPicture.asset(
-                                    'assets/images/white_rec.svg',
-                                  ),
-                                  Positioned(
-                                    top: height * 0.023,
-                                    left: width * 0.05,
-                                    child: Text(
-                                      'Points from follow',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                        color: Color(0xff338CBC),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Positioned(
-                              top: height * 0.017,
-                              left: width * 0.47,
-                              child: Text(
-                                'Points from task',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: Color(0xffCDCFE0),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
- */
-
-/***
- *        SizedBox(height: height * 0.03),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: width / 15,
-                ),
-                child: Stack(
-                  children: [
-                    Container(
-                      width: width * 1,
-                      height: height * 0.09,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromARGB(255, 213, 214, 218),
-                            spreadRadius: 0,
-                            blurRadius: 10,
-                            offset: Offset(5, 5),
-                          ),
-                        ],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: width / 15),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Points',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xffE37A29),
-                              ),
-                            ),
-                            Text(
-                              'Stamps',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xff1E130B),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-
-                    //Half bar
-                    Padding(
-                      padding: EdgeInsets.only(top: height * 0.075),
-                      child: Container(
-                        height: height * 0.015,
-                        width: width * 0.45,
-                        decoration: BoxDecoration(
-                          color: Color(0xff3756CF),
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(50),
-                            topRight: Radius.circular(50),
-                            bottomRight: Radius.circular(50),
-                            topLeft: Radius.circular(6),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
- */

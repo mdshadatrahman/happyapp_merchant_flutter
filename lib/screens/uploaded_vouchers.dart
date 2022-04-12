@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../utils/Colors.dart';
+import '../widgets/custom_bottom_navigation.dart';
 import 'add_voucher_coupon.dart';
 
 class UploadedVoucher extends StatefulWidget {
@@ -213,29 +214,7 @@ class _UploadedVoucherState extends State<UploadedVoucher> {
             // )
           ],
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/Vector.svg'),
-              label: 'Overview',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/calendar.svg'),
-              label: 'This Month',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/ticket.svg'),
-              label: 'Offers',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/settings.svg'),
-              label: 'Settings',
-            ),
-          ],
-          currentIndex: 1,
-          selectedItemColor: Color(0xff6347EB),
-          // onTap: _onItemTapped,
-        ),
+        bottomNavigationBar: CustomBottomNavigationBar(),
       ),
     );
   }

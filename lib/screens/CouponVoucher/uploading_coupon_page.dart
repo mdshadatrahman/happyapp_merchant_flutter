@@ -1,22 +1,25 @@
-import 'package:codecell_marchant_happ_app/screens/CouponVoucher/uploading_coupon_page.dart';
+import 'package:codecell_marchant_happ_app/screens/CouponVoucher/on_done_click.dart';
 import 'package:codecell_marchant_happ_app/screens/uploaded_vouchers.dart';
 import 'package:codecell_marchant_happ_app/utils/drawer.dart';
+import 'package:codecell_marchant_happ_app/widgets/custom_ticket.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 
-import '../utils/Colors.dart';
-import '../widgets/custom_bottom_navigation.dart';
+import '../../utils/Colors.dart';
+import '../../widgets/custom_bottom_navigation.dart';
 
-class AddVoucherCoupon extends StatefulWidget {
-  const AddVoucherCoupon({Key? key}) : super(key: key);
+class UploadingCouponPage extends StatefulWidget {
+  const UploadingCouponPage({Key? key}) : super(key: key);
 
   @override
-  State<AddVoucherCoupon> createState() => _AddVoucherCouponState();
+  State<UploadingCouponPage> createState() => _UploadingCouponPageState();
 }
 
-class _AddVoucherCouponState extends State<AddVoucherCoupon>
+class _UploadingCouponPageState extends State<UploadingCouponPage>
     with SingleTickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   late TabController _tabController;
@@ -160,36 +163,77 @@ class _AddVoucherCouponState extends State<AddVoucherCoupon>
                   SingleChildScrollView(
                     child: Container(
                       child: GestureDetector(
-                        onTap: () {
-                          Get.to(() => UploadingCouponPage());
-                        },
-                        child: Stack(
+                        onTap: () {},
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Center(
-                              child: SvgPicture.asset(
-                                'assets/images/rectangle.svg',
-                              ),
-                            ),
+                            CustomTicket(width: width, height: height),
                             Padding(
-                              padding:
-                                  EdgeInsets.symmetric(vertical: width * 0.2),
-                              child: Column(
-                                children: [
-                                  Center(
-                                    child: Icon(
-                                      Icons.file_upload_outlined,
-                                      size: 50,
-                                    ),
-                                  ),
-                                  Text(
-                                    'upload from your gallery',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w400),
-                                  )
-                                ],
+                              padding: EdgeInsets.only(left: width * 0.1),
+                              child: Text(
+                                'Uploading...',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w400,
+                                ),
                               ),
                             ),
+                            SizedBox(height: height * 0.01),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                left: width * 0.08,
+                                top: height * 0.02,
+                              ),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: LinearPercentIndicator(
+                                  width: width * 0.8,
+                                  lineHeight: height * 0.02,
+                                  percent: 0.76,
+                                  progressColor: Color(0xff4260B4),
+                                  backgroundColor: Color(0xff2B0808),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: height * 0.005),
+                            Padding(
+                              padding: EdgeInsets.only(left: width * 0.1),
+                              child: Text(
+                                '76% complete',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w300,
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: height * 0.02),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => OnDoneClick());
+                              },
+                              child: Center(
+                                child: Column(
+                                  children: [
+                                    Icon(
+                                      Icons.done,
+                                      color: Color(0xff3D59C6),
+                                      size: 70,
+                                    ),
+                                    SizedBox(height: height * 0.005),
+                                    Text(
+                                      'Done !',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            )
                           ],
                         ),
                       ),
@@ -207,7 +251,7 @@ class _AddVoucherCouponState extends State<AddVoucherCoupon>
             ),
           ],
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar:CustomBottomNavigationBar(),
       ),
     );
   }

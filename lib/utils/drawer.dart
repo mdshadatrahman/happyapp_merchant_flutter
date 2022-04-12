@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({
@@ -33,13 +34,27 @@ class CustomDrawer extends StatelessWidget {
                 Center(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Demo Hub",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                      ),
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: Icon(
+                            Icons.arrow_back,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(width: width * 0.2),
+                        Text(
+                          "Demo Hub",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -48,7 +63,7 @@ class CustomDrawer extends StatelessWidget {
                   title: Text(
                     "Home",
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
                     ),

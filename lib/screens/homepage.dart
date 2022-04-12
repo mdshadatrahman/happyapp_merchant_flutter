@@ -1,3 +1,4 @@
+import 'package:codecell_marchant_happ_app/screens/our_offers.dart';
 import 'package:codecell_marchant_happ_app/screens/points_page.dart';
 import 'package:codecell_marchant_happ_app/screens/received_coupons.dart';
 import 'package:codecell_marchant_happ_app/screens/tasks_page.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../utils/Colors.dart';
+import '../widgets/custom_bottom_navigation.dart';
 import 'add_voucher_coupon.dart';
 import 'history_page_pointsstamps.dart';
 import 'restaurants_page.dart';
@@ -108,7 +110,6 @@ class _HomeScreenState extends State<HomeScreen>
                             GestureDetector(
                               onTap: () {
                                 _key.currentState!.openDrawer();
-                                print('tapped');
                               },
                               child: Icon(
                                 Icons.sort,
@@ -419,8 +420,9 @@ class _HomeScreenState extends State<HomeScreen>
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Get.to(() =>
-                                ReceivedCoupons()); //! Changed from buyCoupons
+                            Get.to(
+                              () => ReceivedCoupons(),
+                            ); //! Changed from buyCoupons
                           },
                           child: Container(
                             width: width * 0.4,
@@ -494,136 +496,144 @@ class _HomeScreenState extends State<HomeScreen>
               SizedBox(height: height * 0.035),
 
               //Discount field
-              Padding(
-                padding: EdgeInsets.only(
-                  left: width / 15,
-                  right: width / 15,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: height * 0.15,
-                      width: width * 0.77,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        gradient: LinearGradient(
-                          begin: Alignment.topRight,
-                          end: Alignment.bottomLeft,
-                          colors: [
-                            Color(0xff577399),
-                            Color(0xffBDD5EA),
-                          ],
+              GestureDetector(
+                onTap: () {
+                  Get.to(() => OurOfferPage());
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    left: width / 15,
+                    right: width / 15,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: height * 0.15,
+                        width: width * 0.77,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              Color(0xff577399),
+                              Color(0xffBDD5EA),
+                            ],
+                          ),
                         ),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: width * 0.05,
-                          vertical: height * 0.01,
-                        ),
-                        child: Stack(
-                          children: [
-                            Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.topRight,
-                                  child: Icon(
-                                    Icons.more_horiz,
-                                    size: 40,
-                                    color: AppColors.blackH1,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Center(
-                              child: Row(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: width * 0.05,
+                            vertical: height * 0.01,
+                          ),
+                          child: Stack(
+                            children: [
+                              Column(
                                 children: [
-                                  SvgPicture.asset(
-                                    'assets/images/randomlogo.svg',
-                                  ),
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.only(left: width * 0.025),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        SizedBox(height: height * 0.03),
-                                        Text(
-                                          '50% flat discount',
-                                          textAlign: TextAlign.start,
-                                          style: TextStyle(
-                                            color: AppColors.blackH1,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                        Container(
-                                          margin: EdgeInsets.symmetric(
-                                            vertical: 6,
-                                          ),
-                                          width: width * 0.48,
-                                          height: height * 0.01,
-                                          child: ClipRRect(
-                                            borderRadius: BorderRadius.all(
-                                              Radius.circular(10),
-                                            ),
-                                            child: LinearProgressIndicator(
-                                              value: 0.5,
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                Color(0xff577399),
-                                              ),
-                                              backgroundColor:
-                                                  Color(0xffEAF1F9),
-                                            ),
-                                          ),
-                                        ),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              'Get voucher NOW !',
-                                              style: TextStyle(
-                                                fontSize: 10,
-                                                fontWeight: FontWeight.w500,
-                                                color: AppColors.blackH2,
-                                              ),
-                                            ),
-                                            SizedBox(width: width * 0.05),
-                                            Row(
-                                              children: [
-                                                Text(
-                                                  'See Details',
-                                                  style: TextStyle(
-                                                    fontSize: 10,
-                                                    fontWeight: FontWeight.w500,
-                                                    color: AppColors.blackH3,
-                                                  ),
-                                                ),
-                                                Icon(
-                                                  Icons.arrow_forward_outlined,
-                                                  color: AppColors.blackH3,
-                                                  size: 20,
-                                                )
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                  Align(
+                                    alignment: Alignment.topRight,
+                                    child: Icon(
+                                      Icons.more_horiz,
+                                      size: 40,
+                                      color: AppColors.blackH1,
                                     ),
                                   ),
                                 ],
                               ),
-                            ),
-                          ],
+                              Center(
+                                child: Row(
+                                  children: [
+                                    SvgPicture.asset(
+                                      'assets/images/randomlogo.svg',
+                                    ),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.only(left: width * 0.025),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          SizedBox(height: height * 0.03),
+                                          Text(
+                                            '50% flat discount',
+                                            textAlign: TextAlign.start,
+                                            style: TextStyle(
+                                              color: AppColors.blackH1,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          Container(
+                                            margin: EdgeInsets.symmetric(
+                                              vertical: 6,
+                                            ),
+                                            width: width * 0.48,
+                                            height: height * 0.01,
+                                            child: ClipRRect(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(10),
+                                              ),
+                                              child: LinearProgressIndicator(
+                                                value: 0.5,
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  Color(0xff577399),
+                                                ),
+                                                backgroundColor:
+                                                    Color(0xffEAF1F9),
+                                              ),
+                                            ),
+                                          ),
+                                          Row(
+                                            children: [
+                                              Text(
+                                                'Get voucher NOW !',
+                                                style: TextStyle(
+                                                  fontSize: 10,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: AppColors.blackH2,
+                                                ),
+                                              ),
+                                              SizedBox(width: width * 0.05),
+                                              Row(
+                                                children: [
+                                                  Text(
+                                                    'See Details',
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color: AppColors.blackH3,
+                                                    ),
+                                                  ),
+                                                  Icon(
+                                                    Icons
+                                                        .arrow_forward_outlined,
+                                                    color: AppColors.blackH3,
+                                                    size: 20,
+                                                  )
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    Icon(
-                      Icons.arrow_circle_right_outlined,
-                      color: AppColors.blackH3,
-                    )
-                  ],
+                      Icon(
+                        Icons.arrow_circle_right_outlined,
+                        color: AppColors.blackH3,
+                      )
+                    ],
+                  ),
                 ),
               ),
 
@@ -652,7 +662,7 @@ class _HomeScreenState extends State<HomeScreen>
                       //Restaurants
                       GestureDetector(
                         onTap: () {
-                          Get.to(() => Restaurants());
+                          // Get.to(() => Restaurants());
                         },
                         child: Padding(
                           padding: EdgeInsets.only(top: height * 0.02),
@@ -867,29 +877,7 @@ class _HomeScreenState extends State<HomeScreen>
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/Vector.svg'),
-              label: 'Overview',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/calendar.svg'),
-              label: 'This Month',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/ticket.svg'),
-              label: 'Offers',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/settings.svg'),
-              label: 'Settings',
-            ),
-          ],
-          currentIndex: 1,
-          selectedItemColor: Color(0xff6347EB),
-          // onTap: _onItemTapped,
-        ),
+        bottomNavigationBar: CustomBottomNavigationBar(),
       ),
     );
   }

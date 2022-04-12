@@ -1,18 +1,20 @@
+import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:codecell_marchant_happ_app/utils/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
+
 import '../utils/Colors.dart';
 import '../widgets/custom_bottom_navigation.dart';
 
-class HistoryPage extends StatefulWidget {
-  const HistoryPage({Key? key}) : super(key: key);
+class OurOfferPage extends StatefulWidget {
+  const OurOfferPage({Key? key}) : super(key: key);
 
   @override
-  State<HistoryPage> createState() => _HistoryPageState();
+  State<OurOfferPage> createState() => _OurOfferPageState();
 }
 
-class _HistoryPageState extends State<HistoryPage>
+class _OurOfferPageState extends State<OurOfferPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   final GlobalKey<ScaffoldState> _key = GlobalKey();
@@ -20,7 +22,7 @@ class _HistoryPageState extends State<HistoryPage>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, length: 2);
+    _tabController = TabController(vsync: this, length: 7);
   }
 
   @override
@@ -36,11 +38,10 @@ class _HistoryPageState extends State<HistoryPage>
     return SafeArea(
       child: Scaffold(
         key: _key,
-        drawer: CustomDrawer(height: height, width: width),
-        backgroundColor: Color(0xffFAF9F9),
+        drawer: CustomDrawer(width: width, height: height),
         appBar: NewGradientAppBar(
           title: Text(
-            'History',
+            'Offer',
             style: TextStyle(
               color: AppColors.white,
               fontSize: 18,
@@ -79,6 +80,7 @@ class _HistoryPageState extends State<HistoryPage>
             ],
           ),
         ),
+        backgroundColor: Color(0xffFAF9F9),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -113,7 +115,7 @@ class _HistoryPageState extends State<HistoryPage>
                         width: width * 0.4,
                         child: Center(
                           child: Text(
-                            'Points',
+                            'General Offer',
                             style: TextStyle(
                               fontSize: 18,
                               color: Color(0xffE37A29),
@@ -127,10 +129,80 @@ class _HistoryPageState extends State<HistoryPage>
                         width: width * 0.4,
                         child: Center(
                           child: Text(
-                            'Stamps',
+                            'Scheduled Offer',
                             style: TextStyle(
                               fontSize: 18,
-                              color: Color(0xff1E130B),
+                              color: Color(0xffE37A29),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: height * 0.07,
+                        width: width * 0.4,
+                        child: Center(
+                          child: Text(
+                            'OTP Offer',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xffE37A29),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: height * 0.07,
+                        width: width * 0.4,
+                        child: Center(
+                          child: Text(
+                            'Visit Offer',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xffE37A29),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: height * 0.07,
+                        width: width * 0.4,
+                        child: Center(
+                          child: Text(
+                            'Birthday Offer',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xffE37A29),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: height * 0.07,
+                        width: width * 0.4,
+                        child: Center(
+                          child: Text(
+                            'Reminder Offer',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xffE37A29),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: height * 0.07,
+                        width: width * 0.4,
+                        child: Center(
+                          child: Text(
+                            'Sharing coupon',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xffE37A29),
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -140,18 +212,16 @@ class _HistoryPageState extends State<HistoryPage>
                   ),
                 ),
               ),
+
+              //Main Body
               Container(
                 height: height,
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    //points
                     SingleChildScrollView(
                       child: Column(
                         children: [
-                          EarnPointsWidget(height: height, width: width),
-                          EarnPointsWidget(height: height, width: width),
-                          EarnPointsWidget(height: height, width: width),
                           EarnPointsWidget(height: height, width: width),
                           EarnPointsWidget(height: height, width: width),
                           EarnPointsWidget(height: height, width: width),
@@ -159,14 +229,59 @@ class _HistoryPageState extends State<HistoryPage>
                         ],
                       ),
                     ),
-
-                    //stamps
                     SingleChildScrollView(
                       child: Column(
                         children: [
                           EarnPointsWidget(height: height, width: width),
                           EarnPointsWidget(height: height, width: width),
                           EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                        ],
+                      ),
+                    ),
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                        ],
+                      ),
+                    ),
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                        ],
+                      ),
+                    ),
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                        ],
+                      ),
+                    ),
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                          EarnPointsWidget(height: height, width: width),
+                        ],
+                      ),
+                    ),
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
                           EarnPointsWidget(height: height, width: width),
                           EarnPointsWidget(height: height, width: width),
                           EarnPointsWidget(height: height, width: width),
@@ -176,7 +291,7 @@ class _HistoryPageState extends State<HistoryPage>
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

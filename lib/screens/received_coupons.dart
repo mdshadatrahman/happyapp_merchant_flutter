@@ -1,9 +1,11 @@
+import 'package:codecell_marchant_happ_app/utils/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
 
 import '../utils/Colors.dart';
+import '../widgets/custom_bottom_navigation.dart';
 import 'buy_coupons_details.dart';
 
 class ReceivedCoupons extends StatefulWidget {
@@ -16,6 +18,7 @@ class ReceivedCoupons extends StatefulWidget {
 class _ReceivedCouponsState extends State<ReceivedCoupons>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   void initState() {
@@ -35,6 +38,14 @@ class _ReceivedCouponsState extends State<ReceivedCoupons>
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
+        key: _key,
+        drawer: CustomDrawer(height: height, width: width),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: Color(0xff3756CF),
+          child: Icon(Icons.add),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         appBar: NewGradientAppBar(
           title: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -57,9 +68,14 @@ class _ReceivedCouponsState extends State<ReceivedCoupons>
               ),
             ],
           ),
-          leading: Icon(
-            Icons.sort,
-            color: AppColors.white,
+          leading: GestureDetector(
+            onTap: () {
+              _key.currentState!.openDrawer();
+            },
+            child: Icon(
+              Icons.sort,
+              color: AppColors.white,
+            ),
           ),
           centerTitle: true,
           actions: [
@@ -91,15 +107,40 @@ class _ReceivedCouponsState extends State<ReceivedCoupons>
               TabBar(
                 controller: _tabController,
                 isScrollable: true,
-                labelColor: Colors.red,
-                tabs: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: width / 15),
-                    child: tabbartest(width: width, height: height),
+                indicator: UnderlineTabIndicator(
+                  borderSide: BorderSide(
+                    width: 10.0,
+                    color: Color(0xff3756CF),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: width / 15),
-                    child: tabbartest2(width: width, height: height),
+                ),
+                tabs: [
+                  Container(
+                    height: height * 0.07,
+                    width: width * 0.4,
+                    child: Center(
+                      child: Text(
+                        'Add voucher',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Color(0xffE37A29),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: height * 0.07,
+                    width: width * 0.4,
+                    child: Center(
+                      child: Text(
+                        'Create Coupons',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Color(0xff1E130B),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -108,29 +149,6 @@ class _ReceivedCouponsState extends State<ReceivedCoupons>
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    Container(
-                      child: Column(
-                        children: [
-                          SizedBox(height: height * 0.03),
-                          Container(
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  CouponsTileBuy(width: width, height: height),
-                                  CouponsTileBuy(width: width, height: height),
-                                  CouponsTileBuy(
-                                    width: width,
-                                    height: height,
-                                    isBestSeller: true,
-                                  ),
-                                  CouponsTileBuy(width: width, height: height),
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
                     Container(
                       child: Column(
                         children: [
@@ -146,12 +164,14 @@ class _ReceivedCouponsState extends State<ReceivedCoupons>
                                   height: height,
                                   isBestSeller: true,
                                 ),
-                                CouponsTile(width: width, height: height),
                               ],
                             )),
                           )
                         ],
                       ),
+                    ),
+                    Center(
+                      child: Text('Empty'),
                     ),
                   ],
                 ),
@@ -159,29 +179,7 @@ class _ReceivedCouponsState extends State<ReceivedCoupons>
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/Vector.svg'),
-              label: 'Overview',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/calendar.svg'),
-              label: 'This Month',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/ticket.svg'),
-              label: 'Offers',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/settings.svg'),
-              label: 'Settings',
-            ),
-          ],
-          currentIndex: 1,
-          selectedItemColor: Color(0xff6347EB),
-          // onTap: _onItemTapped,
-        ),
+        bottomNavigationBar: CustomBottomNavigationBar(),
       ),
     );
   }
@@ -516,14 +514,14 @@ class CouponsTile extends StatelessWidget {
                     itemBuilder: (context) => [
                       PopupMenuItem(
                         child: Text(
-                          "Send as gift",
+                          "Delete",
                           style: TextStyle(color: Colors.white),
                         ),
                         value: 1,
                       ),
                       PopupMenuItem(
                         child: Text(
-                          "Share via",
+                          "Edit",
                           style: TextStyle(color: Colors.white),
                         ),
                         value: 2,
