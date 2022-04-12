@@ -1,7 +1,5 @@
-import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:codecell_marchant_happ_app/utils/drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
 
 import '../utils/Colors.dart';
@@ -64,14 +62,14 @@ class _OurOfferPageState extends State<OurOfferPage>
               color: AppColors.white,
               size: 35,
             ),
-            CircleAvatar(
+            const CircleAvatar(
               backgroundImage: NetworkImage(
                 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
               ),
             ),
             SizedBox(width: width / 15)
           ],
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
@@ -80,7 +78,7 @@ class _OurOfferPageState extends State<OurOfferPage>
             ],
           ),
         ),
-        backgroundColor: Color(0xffFAF9F9),
+        backgroundColor: const Color(0xffFAF9F9),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -91,7 +89,7 @@ class _OurOfferPageState extends State<OurOfferPage>
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Color.fromARGB(255, 213, 214, 218),
                         spreadRadius: 0,
@@ -103,17 +101,17 @@ class _OurOfferPageState extends State<OurOfferPage>
                   child: TabBar(
                     controller: _tabController,
                     isScrollable: true,
-                    indicator: UnderlineTabIndicator(
+                    indicator: const UnderlineTabIndicator(
                       borderSide: BorderSide(
                         width: 10.0,
                         color: Color(0xff3756CF),
                       ),
                     ),
                     tabs: [
-                      Container(
+                      SizedBox(
                         height: height * 0.07,
                         width: width * 0.4,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'General Offer',
                             style: TextStyle(
@@ -124,10 +122,10 @@ class _OurOfferPageState extends State<OurOfferPage>
                           ),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         height: height * 0.07,
                         width: width * 0.4,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Scheduled Offer',
                             style: TextStyle(
@@ -138,10 +136,10 @@ class _OurOfferPageState extends State<OurOfferPage>
                           ),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         height: height * 0.07,
                         width: width * 0.4,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'OTP Offer',
                             style: TextStyle(
@@ -152,10 +150,10 @@ class _OurOfferPageState extends State<OurOfferPage>
                           ),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         height: height * 0.07,
                         width: width * 0.4,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Visit Offer',
                             style: TextStyle(
@@ -166,10 +164,10 @@ class _OurOfferPageState extends State<OurOfferPage>
                           ),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         height: height * 0.07,
                         width: width * 0.4,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Birthday Offer',
                             style: TextStyle(
@@ -180,10 +178,10 @@ class _OurOfferPageState extends State<OurOfferPage>
                           ),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         height: height * 0.07,
                         width: width * 0.4,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Reminder Offer',
                             style: TextStyle(
@@ -194,10 +192,10 @@ class _OurOfferPageState extends State<OurOfferPage>
                           ),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         height: height * 0.07,
                         width: width * 0.4,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Sharing coupon',
                             style: TextStyle(
@@ -214,7 +212,7 @@ class _OurOfferPageState extends State<OurOfferPage>
               ),
 
               //Main Body
-              Container(
+              SizedBox(
                 height: height,
                 child: TabBarView(
                   controller: _tabController,
@@ -295,7 +293,7 @@ class _OurOfferPageState extends State<OurOfferPage>
             ],
           ),
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }
@@ -324,8 +322,8 @@ class EarnPointsWidget extends StatelessWidget {
         height: height * 0.09,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: Color(0xffEFF1FF).withOpacity(0.75),
-          boxShadow: [
+          color: const Color(0xffEFF1FF).withOpacity(0.75),
+          boxShadow: const [
             BoxShadow(
               color: Color.fromARGB(255, 174, 226, 241),
               spreadRadius: 0,
@@ -345,7 +343,7 @@ class EarnPointsWidget extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Review this item for',
                     style: TextStyle(
                       fontSize: 18,
@@ -353,7 +351,7 @@ class EarnPointsWidget extends StatelessWidget {
                     ),
                   ),
                   Row(
-                    children: [
+                    children: const [
                       Text(
                         '10 ',
                         style: TextStyle(

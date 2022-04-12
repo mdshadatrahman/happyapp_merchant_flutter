@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../utils/Colors.dart';
@@ -21,13 +19,13 @@ class _HistoryPagePurchaseState extends State<HistoryPagePurchase> {
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffFAF9F9),
+        backgroundColor: const Color(0xffFAF9F9),
         body: Column(
           children: [
             //!TODO: need to add custom design in appbar
             Container(
               height: AppBar().preferredSize.height,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -64,7 +62,7 @@ class _HistoryPagePurchaseState extends State<HistoryPagePurchase> {
                           color: AppColors.white,
                           size: 35,
                         ),
-                        CircleAvatar(
+                        const CircleAvatar(
                           backgroundImage: NetworkImage(
                             'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
                           ),
@@ -91,7 +89,7 @@ class _HistoryPagePurchaseState extends State<HistoryPagePurchase> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: Colors.white,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Color.fromARGB(255, 213, 214, 218),
                           spreadRadius: 0,
@@ -103,7 +101,7 @@ class _HistoryPagePurchaseState extends State<HistoryPagePurchase> {
                     child: GestureDetector(
                       onTap: () {
                         Get.off(
-                          () => HistoryPage(),
+                          () => const HistoryPage(),
                           transition: Transition.noTransition,
                         );
                       },
@@ -111,7 +109,7 @@ class _HistoryPagePurchaseState extends State<HistoryPagePurchase> {
                         padding: EdgeInsets.symmetric(horizontal: width / 15),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                          children: const [
                             Text(
                               'Points & Stapm',
                               style: TextStyle(
@@ -143,7 +141,7 @@ class _HistoryPagePurchaseState extends State<HistoryPagePurchase> {
                     child: Container(
                       height: height * 0.015,
                       width: width * 0.45,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Color(0xff118286),
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(50),
@@ -175,7 +173,7 @@ class _HistoryPagePurchaseState extends State<HistoryPagePurchase> {
             //Card End
           ],
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }
@@ -204,8 +202,8 @@ class EarnPointsWidget extends StatelessWidget {
         height: height * 0.09,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: Color(0xffEFF1FF).withOpacity(0.75),
-          boxShadow: [
+          color: const Color(0xffEFF1FF).withOpacity(0.75),
+          boxShadow: const [
             BoxShadow(
               color: Color.fromARGB(255, 174, 226, 241),
               spreadRadius: 0,
@@ -225,7 +223,7 @@ class EarnPointsWidget extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Review this item for',
                     style: TextStyle(
                       fontSize: 18,
@@ -233,7 +231,7 @@ class EarnPointsWidget extends StatelessWidget {
                     ),
                   ),
                   Row(
-                    children: [
+                    children: const [
                       Text(
                         '10 ',
                         style: TextStyle(

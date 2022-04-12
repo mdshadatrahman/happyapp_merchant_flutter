@@ -1,7 +1,5 @@
-
 import 'package:codecell_marchant_happ_app/utils/Colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -22,13 +20,13 @@ class _RestaurantsState extends State<Restaurants> {
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffFAF9F9),
+        backgroundColor: const Color(0xffFAF9F9),
         body: Column(
           children: [
             //!TODO: need to add custom design in appbar
             Container(
               height: AppBar().preferredSize.height,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -65,7 +63,7 @@ class _RestaurantsState extends State<Restaurants> {
                           color: AppColors.white,
                           size: 35,
                         ),
-                        CircleAvatar(
+                        const CircleAvatar(
                           backgroundImage: NetworkImage(
                             'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
                           ),
@@ -90,7 +88,7 @@ class _RestaurantsState extends State<Restaurants> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: Colors.white,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Color.fromARGB(255, 213, 214, 218),
                           spreadRadius: 0,
@@ -103,7 +101,7 @@ class _RestaurantsState extends State<Restaurants> {
                       child: Text(
                         'Notifications',
                         style: GoogleFonts.inter(
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
                           ),
@@ -122,12 +120,12 @@ class _RestaurantsState extends State<Restaurants> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
+                  SizedBox(
                     height: width * 0.08,
                     width: width * 0.12,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Enable',
                         style: TextStyle(
                           fontSize: 10,
@@ -135,20 +133,20 @@ class _RestaurantsState extends State<Restaurants> {
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Color(0xff118286),
-                        padding: EdgeInsets.all(0),
+                        primary: const Color(0xff118286),
+                        padding: const EdgeInsets.all(0),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(2),
                         ),
                       ),
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     height: width * 0.08,
                     width: width * 0.12,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Disable',
                         style: TextStyle(
                           fontSize: 10,
@@ -157,8 +155,8 @@ class _RestaurantsState extends State<Restaurants> {
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Color(0xffC4C4C4),
-                        padding: EdgeInsets.all(0),
+                        primary: const Color(0xffC4C4C4),
+                        padding: const EdgeInsets.all(0),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(2),
                         ),
@@ -184,7 +182,7 @@ class _RestaurantsState extends State<Restaurants> {
             //Card End
           ],
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }
@@ -220,8 +218,8 @@ class EarnPointsWidget extends StatelessWidget {
           height: height * 0.09,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            color: Color(0xffEFF1FF).withOpacity(0.75),
-            boxShadow: [
+            color: const Color(0xffEFF1FF).withOpacity(0.75),
+            boxShadow: const [
               BoxShadow(
                 color: Color.fromARGB(255, 174, 226, 241),
                 spreadRadius: 0,
@@ -241,7 +239,7 @@ class EarnPointsWidget extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Review this item for',
                       style: TextStyle(
                         fontSize: 18,
@@ -249,7 +247,7 @@ class EarnPointsWidget extends StatelessWidget {
                       ),
                     ),
                     Row(
-                      children: [
+                      children: const [
                         Text(
                           '10 ',
                           style: TextStyle(
@@ -293,7 +291,7 @@ class CustomDialog1 extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
-      child: Container(
+      child: SizedBox(
         height: height * 0.3,
         width: width * 0.8,
         child: Column(
@@ -302,7 +300,7 @@ class CustomDialog1 extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Review ',
                   style: TextStyle(
                     color: Color(0xffCC002A),
@@ -323,7 +321,7 @@ class CustomDialog1 extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   '100 ',
                   style: TextStyle(
                     color: Color(0xffF7931A),
@@ -354,9 +352,9 @@ class CustomDialog1 extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Color(0xffEFF1FF).withOpacity(0.8),
+                  primary: const Color(0xffEFF1FF).withOpacity(0.8),
                 ),
-                child: Text(
+                child: const Text(
                   'Go to site',
                   style: TextStyle(
                     color: Colors.black,
@@ -396,13 +394,13 @@ class CustomDialog2 extends StatelessWidget {
             height: height * 0.35,
             width: width * 0.8,
           ),
-          Container(
+          SizedBox(
             height: height * 0.35,
             width: width * 0.8,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(bottom: 5),
                   child: Text(
                     'Congratulations !!! ',
@@ -436,7 +434,7 @@ class CustomDialog2 extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       '100 ',
                       style: TextStyle(
                         color: Color(0xffF7931A),
@@ -462,9 +460,9 @@ class CustomDialog2 extends StatelessWidget {
                       Get.back();
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xffEFF1FF).withOpacity(0.8),
+                      primary: const Color(0xffEFF1FF).withOpacity(0.8),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Done',
                       style: TextStyle(
                         color: Colors.black,

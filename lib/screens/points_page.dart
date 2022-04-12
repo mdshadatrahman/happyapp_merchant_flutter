@@ -1,7 +1,6 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:codecell_marchant_happ_app/utils/drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
 
 import '../utils/Colors.dart';
@@ -64,14 +63,14 @@ class _PointsPageState extends State<PointsPage>
               color: AppColors.white,
               size: 35,
             ),
-            CircleAvatar(
+            const CircleAvatar(
               backgroundImage: NetworkImage(
                 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
               ),
             ),
             SizedBox(width: width / 15)
           ],
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
@@ -91,7 +90,7 @@ class _PointsPageState extends State<PointsPage>
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Color.fromARGB(255, 213, 214, 218),
                         spreadRadius: 0,
@@ -103,17 +102,17 @@ class _PointsPageState extends State<PointsPage>
                   child: TabBar(
                     controller: _tabController,
                     isScrollable: true,
-                    indicator: UnderlineTabIndicator(
+                    indicator: const UnderlineTabIndicator(
                       borderSide: BorderSide(
                         width: 10.0,
                         color: Color(0xff3756CF),
                       ),
                     ),
                     tabs: [
-                      Container(
+                      SizedBox(
                         height: height * 0.07,
                         width: width * 0.4,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Points',
                             style: TextStyle(
@@ -124,10 +123,10 @@ class _PointsPageState extends State<PointsPage>
                           ),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         height: height * 0.07,
                         width: width * 0.4,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Stamps',
                             style: TextStyle(
@@ -144,7 +143,7 @@ class _PointsPageState extends State<PointsPage>
               ),
 
               //Main Body
-              Container(
+              SizedBox(
                 height: height,
                 child: TabBarView(
                   controller: _tabController,
@@ -161,7 +160,7 @@ class _PointsPageState extends State<PointsPage>
                               children: <Widget>[
                                 Center(
                                   child: Container(
-                                    color: Color(0xffFAF9F9),
+                                    color: const Color(0xffFAF9F9),
                                     width: width,
                                     child: Row(
                                       mainAxisAlignment:
@@ -171,10 +170,10 @@ class _PointsPageState extends State<PointsPage>
                                           padding: const EdgeInsets.all(8.0),
                                           child: ButtonsTabBar(
                                             decoration: BoxDecoration(
-                                              color: Color(0xffFAF9F9),
+                                              color: const Color(0xffFAF9F9),
                                               borderRadius:
                                                   BorderRadius.circular(10),
-                                              boxShadow: [
+                                              boxShadow: const [
                                                 BoxShadow(
                                                   color: Color.fromARGB(
                                                     255,
@@ -189,14 +188,15 @@ class _PointsPageState extends State<PointsPage>
                                               ],
                                             ),
                                             unselectedBackgroundColor:
-                                                Color(0xffF2F3FB),
+                                                const Color(0xffF2F3FB),
                                             unselectedLabelStyle:
-                                                TextStyle(color: Colors.grey),
-                                            labelStyle: TextStyle(
+                                                const TextStyle(
+                                                    color: Colors.grey),
+                                            labelStyle: const TextStyle(
                                               color: Color(0xff338CBC),
                                               fontWeight: FontWeight.bold,
                                             ),
-                                            tabs: [
+                                            tabs: const [
                                               Tab(
                                                 text: "Points from follow",
                                               ),
@@ -210,7 +210,7 @@ class _PointsPageState extends State<PointsPage>
                                     ),
                                   ),
                                 ),
-                                Container(
+                                SizedBox(
                                   height: height * 0.6,
                                   child: TabBarView(
                                     children: <Widget>[
@@ -225,7 +225,7 @@ class _PointsPageState extends State<PointsPage>
                                               height: height * 0.1,
                                               width: width * 0.8,
                                               decoration: BoxDecoration(
-                                                color: Color(0xffEFF1FF),
+                                                color: const Color(0xffEFF1FF),
                                                 borderRadius:
                                                     BorderRadius.circular(23),
                                               ),
@@ -233,7 +233,7 @@ class _PointsPageState extends State<PointsPage>
                                                 mainAxisAlignment:
                                                     MainAxisAlignment
                                                         .spaceBetween,
-                                                children: [
+                                                children: const [
                                                   Text(
                                                     'Lorem ipsum dummy text for the\noffer region and enable options',
                                                     style: TextStyle(
@@ -253,7 +253,7 @@ class _PointsPageState extends State<PointsPage>
                                               height: height * 0.1,
                                               width: width * 0.8,
                                               decoration: BoxDecoration(
-                                                color: Color(0xffEFF1FF),
+                                                color: const Color(0xffEFF1FF),
                                                 borderRadius:
                                                     BorderRadius.circular(23),
                                               ),
@@ -269,7 +269,7 @@ class _PointsPageState extends State<PointsPage>
                                                       SizedBox(
                                                         height: height * 0.03,
                                                       ),
-                                                      Text(
+                                                      const Text(
                                                         'Review this item for',
                                                         style: TextStyle(
                                                           fontSize: 14,
@@ -285,7 +285,7 @@ class _PointsPageState extends State<PointsPage>
                                                               fontSize: 18,
                                                             ),
                                                           ),
-                                                          Text(
+                                                          const Text(
                                                             'points !',
                                                             style: TextStyle(
                                                               fontSize: 14,
@@ -305,7 +305,7 @@ class _PointsPageState extends State<PointsPage>
                                               height: height * 0.1,
                                               width: width * 0.8,
                                               decoration: BoxDecoration(
-                                                color: Color(0xffEFF1FF),
+                                                color: const Color(0xffEFF1FF),
                                                 borderRadius:
                                                     BorderRadius.circular(23),
                                               ),
@@ -321,7 +321,7 @@ class _PointsPageState extends State<PointsPage>
                                                       SizedBox(
                                                         height: height * 0.03,
                                                       ),
-                                                      Text(
+                                                      const Text(
                                                         'Review this item for',
                                                         style: TextStyle(
                                                           fontSize: 14,
@@ -337,7 +337,7 @@ class _PointsPageState extends State<PointsPage>
                                                               fontSize: 18,
                                                             ),
                                                           ),
-                                                          Text(
+                                                          const Text(
                                                             'points !',
                                                             style: TextStyle(
                                                               fontSize: 14,
@@ -356,7 +356,7 @@ class _PointsPageState extends State<PointsPage>
                                               height: height * 0.1,
                                               width: width * 0.8,
                                               decoration: BoxDecoration(
-                                                color: Color(0xffEFF1FF),
+                                                color: const Color(0xffEFF1FF),
                                                 borderRadius:
                                                     BorderRadius.circular(23),
                                               ),
@@ -372,7 +372,7 @@ class _PointsPageState extends State<PointsPage>
                                                       SizedBox(
                                                         height: height * 0.03,
                                                       ),
-                                                      Text(
+                                                      const Text(
                                                         'Review this item for',
                                                         style: TextStyle(
                                                           fontSize: 14,
@@ -388,7 +388,7 @@ class _PointsPageState extends State<PointsPage>
                                                               fontSize: 18,
                                                             ),
                                                           ),
-                                                          Text(
+                                                          const Text(
                                                             'points !',
                                                             style: TextStyle(
                                                               fontSize: 14,
@@ -415,7 +415,7 @@ class _PointsPageState extends State<PointsPage>
                                               height: height * 0.1,
                                               width: width * 0.8,
                                               decoration: BoxDecoration(
-                                                color: Color(0xffEFF1FF),
+                                                color: const Color(0xffEFF1FF),
                                                 borderRadius:
                                                     BorderRadius.circular(23),
                                               ),
@@ -424,7 +424,7 @@ class _PointsPageState extends State<PointsPage>
                                                   Positioned(
                                                     left: width * 0.02,
                                                     top: height * 0.03,
-                                                    child: Text(
+                                                    child: const Text(
                                                       'Lorem ipsum dummy text for the offer\nregion and enable options',
                                                       style: TextStyle(
                                                         fontSize: 14,
@@ -436,7 +436,7 @@ class _PointsPageState extends State<PointsPage>
                                                   Positioned(
                                                     left: width * 0.55,
                                                     top: height * 0.055,
-                                                    child: Container(
+                                                    child: SizedBox(
                                                       height: height * 0.03,
                                                       width: width * 0.15,
                                                       child: TextButton(
@@ -444,11 +444,11 @@ class _PointsPageState extends State<PointsPage>
                                                         style: TextButton
                                                             .styleFrom(
                                                           backgroundColor:
-                                                              Color(
+                                                              const Color(
                                                             0xff4B99C4,
                                                           ),
                                                         ),
-                                                        child: Text(
+                                                        child: const Text(
                                                           'Edit',
                                                           style: TextStyle(
                                                             color: Colors.white,
@@ -486,7 +486,7 @@ class _PointsPageState extends State<PointsPage>
                               children: <Widget>[
                                 Center(
                                   child: Container(
-                                    color: Color(0xffFAF9F9),
+                                    color: const Color(0xffFAF9F9),
                                     width: width,
                                     child: Row(
                                       mainAxisAlignment:
@@ -496,10 +496,10 @@ class _PointsPageState extends State<PointsPage>
                                           padding: const EdgeInsets.all(8.0),
                                           child: ButtonsTabBar(
                                             decoration: BoxDecoration(
-                                              color: Color(0xffFAF9F9),
+                                              color: const Color(0xffFAF9F9),
                                               borderRadius:
                                                   BorderRadius.circular(10),
-                                              boxShadow: [
+                                              boxShadow: const [
                                                 BoxShadow(
                                                   color: Color.fromARGB(
                                                     255,
@@ -514,14 +514,15 @@ class _PointsPageState extends State<PointsPage>
                                               ],
                                             ),
                                             unselectedBackgroundColor:
-                                                Color(0xffF2F3FB),
+                                                const Color(0xffF2F3FB),
                                             unselectedLabelStyle:
-                                                TextStyle(color: Colors.grey),
-                                            labelStyle: TextStyle(
+                                                const TextStyle(
+                                                    color: Colors.grey),
+                                            labelStyle: const TextStyle(
                                               color: Color(0xff338CBC),
                                               fontWeight: FontWeight.bold,
                                             ),
-                                            tabs: [
+                                            tabs: const [
                                               Tab(
                                                 text: "Set stamps offer",
                                               ),
@@ -535,7 +536,7 @@ class _PointsPageState extends State<PointsPage>
                                     ),
                                   ),
                                 ),
-                                Container(
+                                SizedBox(
                                   height: height * 0.6,
                                   child: TabBarView(
                                     children: <Widget>[
@@ -550,13 +551,13 @@ class _PointsPageState extends State<PointsPage>
                                               height: height * 0.1,
                                               width: width * 0.8,
                                               decoration: BoxDecoration(
-                                                color: Color(0xffEFF1FF),
+                                                color: const Color(0xffEFF1FF),
                                                 borderRadius:
                                                     BorderRadius.circular(23),
                                               ),
                                               child: Row(
                                                 children: [
-                                                  Text(
+                                                  const Text(
                                                     'Need ',
                                                     style: TextStyle(
                                                       fontSize: 16,
@@ -564,7 +565,7 @@ class _PointsPageState extends State<PointsPage>
                                                           FontWeight.w500,
                                                     ),
                                                   ),
-                                                  Icon(
+                                                  const Icon(
                                                     Icons
                                                         .check_box_outline_blank_outlined,
                                                   ),
@@ -572,7 +573,7 @@ class _PointsPageState extends State<PointsPage>
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
                                                             .center,
-                                                    children: [
+                                                    children: const [
                                                       Icon(Icons
                                                           .arrow_drop_up_outlined),
                                                       Icon(
@@ -581,7 +582,7 @@ class _PointsPageState extends State<PointsPage>
                                                     ],
                                                   ),
                                                   SizedBox(width: width * 0.05),
-                                                  Text(
+                                                  const Text(
                                                     'Points for this offer',
                                                     style: TextStyle(
                                                       fontSize: 16,
@@ -600,14 +601,14 @@ class _PointsPageState extends State<PointsPage>
                                               height: height * 0.25,
                                               width: width * 0.6,
                                               decoration: BoxDecoration(
-                                                color: Color(0xffEFF1FF),
+                                                color: const Color(0xffEFF1FF),
                                                 borderRadius:
                                                     BorderRadius.circular(23),
                                               ),
                                               child: Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.center,
-                                                children: [
+                                                children: const [
                                                   Text(
                                                     'Lorem ispum\noffer for the points\nand stamps ',
                                                     textAlign: TextAlign.center,
@@ -635,7 +636,8 @@ class _PointsPageState extends State<PointsPage>
                                                 height: height * 0.18,
                                                 width: width * 0.8,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xffEFF1FF),
+                                                  color:
+                                                      const Color(0xffEFF1FF),
                                                   borderRadius:
                                                       BorderRadius.circular(23),
                                                 ),
@@ -644,7 +646,7 @@ class _PointsPageState extends State<PointsPage>
                                                     Positioned(
                                                       left: width * 0.02,
                                                       top: height * 0.03,
-                                                      child: Text(
+                                                      child: const Text(
                                                         'Stamp level 1',
                                                         style: TextStyle(
                                                           fontSize: 16,
@@ -658,7 +660,7 @@ class _PointsPageState extends State<PointsPage>
                                                     Positioned(
                                                       left: width * 0.02,
                                                       top: height * 0.06,
-                                                      child: Text(
+                                                      child: const Text(
                                                         'lorem ispus offer for points and stamps \nbeing on the level of 1 since its not yet \nto be secured by the merchant',
                                                         style: TextStyle(
                                                           fontSize: 14,
@@ -670,7 +672,7 @@ class _PointsPageState extends State<PointsPage>
                                                     Positioned(
                                                       left: width * 0.55,
                                                       top: height * 0.13,
-                                                      child: Container(
+                                                      child: SizedBox(
                                                         height: height * 0.03,
                                                         width: width * 0.15,
                                                         child: TextButton(
@@ -678,11 +680,10 @@ class _PointsPageState extends State<PointsPage>
                                                           style: TextButton
                                                               .styleFrom(
                                                             backgroundColor:
-                                                                Color(
-                                                              0xff4B99C4,
-                                                            ),
+                                                                const Color(
+                                                                    0xff4B99C4),
                                                           ),
-                                                          child: Text(
+                                                          child: const Text(
                                                             'Edit',
                                                             style: TextStyle(
                                                               color:
@@ -704,7 +705,8 @@ class _PointsPageState extends State<PointsPage>
                                                 height: height * 0.18,
                                                 width: width * 0.8,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xffEFF1FF),
+                                                  color:
+                                                      const Color(0xffEFF1FF),
                                                   borderRadius:
                                                       BorderRadius.circular(23),
                                                 ),
@@ -713,7 +715,7 @@ class _PointsPageState extends State<PointsPage>
                                                     Positioned(
                                                       left: width * 0.02,
                                                       top: height * 0.03,
-                                                      child: Text(
+                                                      child: const Text(
                                                         'Stamp level 1',
                                                         style: TextStyle(
                                                           fontSize: 16,
@@ -727,7 +729,7 @@ class _PointsPageState extends State<PointsPage>
                                                     Positioned(
                                                       left: width * 0.02,
                                                       top: height * 0.06,
-                                                      child: Text(
+                                                      child: const Text(
                                                         'lorem ispus offer for points and stamps \nbeing on the level of 1 since its not yet \nto be secured by the merchant',
                                                         style: TextStyle(
                                                           fontSize: 14,
@@ -739,7 +741,7 @@ class _PointsPageState extends State<PointsPage>
                                                     Positioned(
                                                       left: width * 0.55,
                                                       top: height * 0.13,
-                                                      child: Container(
+                                                      child: SizedBox(
                                                         height: height * 0.03,
                                                         width: width * 0.15,
                                                         child: TextButton(
@@ -747,11 +749,10 @@ class _PointsPageState extends State<PointsPage>
                                                           style: TextButton
                                                               .styleFrom(
                                                             backgroundColor:
-                                                                Color(
-                                                              0xff4B99C4,
-                                                            ),
+                                                                const Color(
+                                                                    0xff4B99C4),
                                                           ),
-                                                          child: Text(
+                                                          child: const Text(
                                                             'Edit',
                                                             style: TextStyle(
                                                               color:
@@ -773,7 +774,8 @@ class _PointsPageState extends State<PointsPage>
                                                 height: height * 0.18,
                                                 width: width * 0.8,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xffEFF1FF),
+                                                  color:
+                                                      const Color(0xffEFF1FF),
                                                   borderRadius:
                                                       BorderRadius.circular(23),
                                                 ),
@@ -782,7 +784,7 @@ class _PointsPageState extends State<PointsPage>
                                                     Positioned(
                                                       left: width * 0.02,
                                                       top: height * 0.03,
-                                                      child: Text(
+                                                      child: const Text(
                                                         'Stamp level 1',
                                                         style: TextStyle(
                                                           fontSize: 16,
@@ -796,7 +798,7 @@ class _PointsPageState extends State<PointsPage>
                                                     Positioned(
                                                       left: width * 0.02,
                                                       top: height * 0.06,
-                                                      child: Text(
+                                                      child: const Text(
                                                         'lorem ispus offer for points and stamps \nbeing on the level of 1 since its not yet \nto be secured by the merchant',
                                                         style: TextStyle(
                                                           fontSize: 14,
@@ -808,7 +810,7 @@ class _PointsPageState extends State<PointsPage>
                                                     Positioned(
                                                       left: width * 0.55,
                                                       top: height * 0.13,
-                                                      child: Container(
+                                                      child: SizedBox(
                                                         height: height * 0.03,
                                                         width: width * 0.15,
                                                         child: TextButton(
@@ -816,11 +818,11 @@ class _PointsPageState extends State<PointsPage>
                                                           style: TextButton
                                                               .styleFrom(
                                                             backgroundColor:
-                                                                Color(
+                                                                const Color(
                                                               0xff4B99C4,
                                                             ),
                                                           ),
-                                                          child: Text(
+                                                          child: const Text(
                                                             'Edit',
                                                             style: TextStyle(
                                                               color:
@@ -853,7 +855,7 @@ class _PointsPageState extends State<PointsPage>
             ],
           ),
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

@@ -22,13 +22,13 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffFAF9F9),
+        backgroundColor:const Color(0xffFAF9F9),
         body: Column(
           children: [
             //!TODO: need to add custom design in appbar
             Container(
               height: AppBar().preferredSize.height,
-              decoration: BoxDecoration(
+              decoration:const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -78,7 +78,7 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
                           color: AppColors.white,
                           size: 35,
                         ),
-                        CircleAvatar(
+                       const CircleAvatar(
                           backgroundImage: NetworkImage(
                             'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
                           ),
@@ -107,7 +107,7 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: Colors.white,
-                        boxShadow: [
+                        boxShadow:const [
                           BoxShadow(
                             color: Color.fromARGB(255, 213, 214, 218),
                             spreadRadius: 0,
@@ -123,7 +123,7 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
                           children: [
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
+                              children:const [
                                 Text(
                                   'Buy Coupons',
                                   style: TextStyle(
@@ -134,7 +134,7 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
                                 ),
                               ],
                             ),
-                            Text(
+                           const Text(
                               'Received Coupons',
                               style: TextStyle(
                                 fontSize: 18,
@@ -154,7 +154,7 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
                     child: Container(
                       height: height * 0.015,
                       width: width * 0.37,
-                      decoration: BoxDecoration(
+                      decoration:const BoxDecoration(
                         color: Color(0xff3756CF),
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(50),
@@ -183,8 +183,8 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
                           height: height * 0.13,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
-                            color: Color(0xffFBFBFB),
-                            boxShadow: [
+                            color:const Color(0xffFBFBFB),
+                            boxShadow:const [
                               BoxShadow(
                                 color: Color.fromARGB(255, 213, 214, 218),
                                 spreadRadius: 0,
@@ -200,7 +200,7 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
                               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 SizedBox(width: width * 0.175),
-                                RotatedBox(
+                               const RotatedBox(
                                   quarterTurns: 1,
                                   child: Text(
                                     'No cash value',
@@ -222,7 +222,7 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
                                         SvgPicture.asset(
                                             'assets/images/kfc.svg'),
                                         SizedBox(width: width * 0.03),
-                                        Text(
+                                       const Text(
                                           '25% OFF\nKFC',
                                           style: TextStyle(
                                             fontSize: 16,
@@ -233,7 +233,7 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
                                     ),
                                     SizedBox(height: width * 0.02),
                                     Row(
-                                      children: [
+                                      children:const [
                                         Text(
                                           '•  Expire date :**-**-***',
                                           style: TextStyle(
@@ -397,7 +397,7 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
               padding: EdgeInsets.symmetric(horizontal: width / 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children:const [
                   Text(
                     'Payment Options',
                     style: TextStyle(
@@ -428,7 +428,7 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
                     width: width * 0.4,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: Color(0xffAFDFFA),
+                      color:const Color(0xffAFDFFA),
                     ),
                     child: Center(
                       child: Text(
@@ -446,7 +446,7 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
                     width: width * 0.4,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: Color(0xff3756CF),
+                      color:const Color(0xff3756CF),
                     ),
                     child: Center(
                       child: Text(
@@ -467,18 +467,18 @@ class _BuyCouponsDetailsState extends State<BuyCouponsDetails> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Get.off(() => BuyCouponsPaymentComplete());
+                    Get.off(() => const BuyCouponsPaymentComplete());
                   },
-                  child: Text('Complete'),
+                  child:const Text('Complete'),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xff462DAB),
+                    primary:const Color(0xff462DAB),
                   ),
                 ),
               ],
             )
           ],
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar:const CustomBottomNavigationBar(),
       ),
     );
   }

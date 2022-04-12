@@ -12,7 +12,6 @@ import '../utils/Colors.dart';
 import '../widgets/custom_bottom_navigation.dart';
 import 'add_voucher_coupon.dart';
 import 'history_page_pointsstamps.dart';
-import 'restaurants_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -51,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen>
                     children: [
                       Container(
                         height: height / 3,
-                        decoration: BoxDecoration(
+                        decoration:const BoxDecoration(
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(50),
                             bottomRight: Radius.circular(50),
@@ -75,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen>
                           ),
                           child: Container(
                             height: height / 6,
-                            decoration: BoxDecoration(
+                            decoration:const BoxDecoration(
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(50),
                                 bottomRight: Radius.circular(50),
@@ -111,13 +110,13 @@ class _HomeScreenState extends State<HomeScreen>
                               onTap: () {
                                 _key.currentState!.openDrawer();
                               },
-                              child: Icon(
+                              child:const Icon(
                                 Icons.sort,
                                 color: Colors.white,
                                 size: 36,
                               ),
                             ),
-                            Text(
+                            const Text(
                               'Total Points 100',
                               style: TextStyle(
                                 color: Colors.white,
@@ -125,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
-                            CircleAvatar(
+                           const CircleAvatar(
                               radius: 20,
                               backgroundImage: NetworkImage(
                                 'https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDV8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
@@ -151,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 ),
                                 height: height / 13,
                                 width: width / 1.6,
-                                child: TextField(
+                                child:const TextField(
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
                                     hintText: 'Search',
@@ -169,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 color: AppColors.blackH1,
                               ),
                               SizedBox(width: width * 0.01),
-                              Icon(
+                             const Icon(
                                 Icons.tune,
                               ),
                             ],
@@ -190,13 +189,13 @@ class _HomeScreenState extends State<HomeScreen>
                           //Box1
                           GestureDetector(
                             onTap: () {
-                              Get.to(() => TasksPage());
+                              Get.to(() =>const TasksPage());
                             },
                             child: Container(
                               height: height * 0.115,
                               width: width * 0.3,
                               decoration: BoxDecoration(
-                                color: Color(0xffF7931A),
+                                color:const Color(0xffF7931A),
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               child: Column(
@@ -211,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen>
                                       right: width * 0.025,
                                     ),
                                     decoration: BoxDecoration(
-                                      color: Color(0xff3A260D).withOpacity(0.2),
+                                      color:const Color(0xff3A260D).withOpacity(0.2),
                                       borderRadius: BorderRadius.circular(13),
                                     ),
                                     child: Padding(
@@ -225,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen>
                                       // bottom: 10,
                                       right: width * 0.025,
                                     ),
-                                    child: Text(
+                                    child:const Text(
                                       'Tasks',
                                       style: TextStyle(
                                         fontSize: 14,
@@ -240,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen>
                           //Box 2
                           GestureDetector(
                             onTap: () {
-                              Get.to(() => PointsPage());
+                              Get.to(() =>const PointsPage());
                             },
                             child: Padding(
                               padding: EdgeInsets.only(
@@ -250,7 +249,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 height: height * 0.115,
                                 width: width * 0.3,
                                 decoration: BoxDecoration(
-                                  color: Color(0xff1F65AB),
+                                  color:const Color(0xff1F65AB),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                                 child: Column(
@@ -266,7 +265,7 @@ class _HomeScreenState extends State<HomeScreen>
                                       ),
                                       decoration: BoxDecoration(
                                         color:
-                                            Color(0xffFFFFFF).withOpacity(0.2),
+                                          const  Color(0xffFFFFFF).withOpacity(0.2),
                                         borderRadius: BorderRadius.circular(13),
                                       ),
                                       child: Padding(
@@ -280,7 +279,7 @@ class _HomeScreenState extends State<HomeScreen>
                                         // bottom: 10,
                                         right: width * 0.025,
                                       ),
-                                      child: Text(
+                                      child:const Text(
                                         'Points',
                                         style: TextStyle(
                                           fontSize: 14,
@@ -296,7 +295,7 @@ class _HomeScreenState extends State<HomeScreen>
                           //Box3
                           GestureDetector(
                             onTap: () {
-                              Get.to(() => HistoryPage());
+                              Get.to(() =>const HistoryPage());
                             },
                             child: Padding(
                               padding: EdgeInsets.only(
@@ -306,7 +305,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 height: height * 0.115,
                                 width: width * 0.3,
                                 decoration: BoxDecoration(
-                                  color: Color(0xff462DAB),
+                                  color:const Color(0xff462DAB),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                                 child: Column(
@@ -316,12 +315,12 @@ class _HomeScreenState extends State<HomeScreen>
                                     Container(
                                       height: height * 0.05,
                                       width: height * 0.05,
-                                      margin: EdgeInsets.only(
+                                      margin:const EdgeInsets.only(
                                         bottom: 10,
                                       ),
                                       decoration: BoxDecoration(
                                         color:
-                                            Color(0xffFFFFFF).withOpacity(0.2),
+                                         const  Color(0xffFFFFFF).withOpacity(0.2),
                                         borderRadius: BorderRadius.circular(13),
                                       ),
                                       child: Padding(
@@ -331,13 +330,11 @@ class _HomeScreenState extends State<HomeScreen>
                                         ),
                                       ),
                                     ),
-                                    Container(
-                                      child: Text(
-                                        'History',
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.white,
-                                        ),
+                                    const Text(
+                                      'History',
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.white,
                                       ),
                                     ),
                                   ],
@@ -364,13 +361,13 @@ class _HomeScreenState extends State<HomeScreen>
                       children: [
                         InkWell(
                           onTap: () {
-                            Get.to(() => AddVoucherCoupon());
+                            Get.to(() =>const AddVoucherCoupon());
                           },
                           child: Container(
                             width: width * 0.4,
                             height: height * 0.12,
                             decoration: BoxDecoration(
-                              color: Color(0xffE5E8EE),
+                              color:const Color(0xffE5E8EE),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Column(
@@ -378,7 +375,7 @@ class _HomeScreenState extends State<HomeScreen>
                               children: [
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
+                                  children:const [
                                     Text(
                                       'Add',
                                       style: TextStyle(
@@ -397,7 +394,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     ),
                                   ],
                                 ),
-                                Text(
+                              const  Text(
                                   'coupon',
                                   style: TextStyle(
                                     color: Colors.black,
@@ -412,7 +409,7 @@ class _HomeScreenState extends State<HomeScreen>
                         Container(
                           height: 1,
                           width: width * 0.3,
-                          color: Color(0xffF7931A),
+                          color:const Color(0xffF7931A),
                         ),
                       ],
                     ),
@@ -421,14 +418,14 @@ class _HomeScreenState extends State<HomeScreen>
                         GestureDetector(
                           onTap: () {
                             Get.to(
-                              () => ReceivedCoupons(),
+                              () =>const ReceivedCoupons(),
                             ); //! Changed from buyCoupons
                           },
                           child: Container(
                             width: width * 0.4,
                             height: height * 0.12,
                             decoration: BoxDecoration(
-                              color: Color(0xffE5E8EE),
+                              color: const Color(0xffE5E8EE),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Column(
@@ -436,7 +433,7 @@ class _HomeScreenState extends State<HomeScreen>
                               children: [
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
+                                  children:const [
                                     Text(
                                       'Buy',
                                       style: TextStyle(
@@ -455,7 +452,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     ),
                                   ],
                                 ),
-                                Text(
+                               const Text(
                                   'coupon',
                                   style: TextStyle(
                                     color: Colors.black,
@@ -470,7 +467,7 @@ class _HomeScreenState extends State<HomeScreen>
                         Container(
                           height: 1,
                           width: width * 0.3,
-                          color: Color(0xffEE85FF),
+                          color:const Color(0xffEE85FF),
                         )
                       ],
                     ),
@@ -498,7 +495,7 @@ class _HomeScreenState extends State<HomeScreen>
               //Discount field
               GestureDetector(
                 onTap: () {
-                  Get.to(() => OurOfferPage());
+                  Get.to(() => const OurOfferPage());
                 },
                 child: Padding(
                   padding: EdgeInsets.only(
@@ -513,7 +510,7 @@ class _HomeScreenState extends State<HomeScreen>
                         width: width * 0.77,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          gradient: LinearGradient(
+                          gradient:const LinearGradient(
                             begin: Alignment.topRight,
                             end: Alignment.bottomLeft,
                             colors: [
@@ -565,12 +562,12 @@ class _HomeScreenState extends State<HomeScreen>
                                             ),
                                           ),
                                           Container(
-                                            margin: EdgeInsets.symmetric(
+                                            margin:const EdgeInsets.symmetric(
                                               vertical: 6,
                                             ),
                                             width: width * 0.48,
                                             height: height * 0.01,
-                                            child: ClipRRect(
+                                            child:const ClipRRect(
                                               borderRadius: BorderRadius.all(
                                                 Radius.circular(10),
                                               ),
@@ -670,7 +667,7 @@ class _HomeScreenState extends State<HomeScreen>
                             height: width * 0.3,
                             width: width * 0.3,
                             decoration: BoxDecoration(
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   color: Color.fromARGB(255, 146, 146, 146),
                                   blurRadius: 5.0,
@@ -683,11 +680,10 @@ class _HomeScreenState extends State<HomeScreen>
                               ],
                               // color: Colors.red,
                               borderRadius: BorderRadius.circular(20),
-                              gradient: LinearGradient(
+                              gradient:const LinearGradient(
                                 begin: Alignment.topCenter,
                                 end: Alignment.bottomCenter,
                                 colors: [
-                                  //TODO: how to refine the gradient property
                                   Color.fromARGB(255, 247, 164, 145),
                                   Color(0xffF5F5F5),
                                 ],
@@ -702,7 +698,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     width: width * 0.15,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(12),
-                                      color: Color(0xffE5EDFF),
+                                      color:const Color(0xffE5EDFF),
                                     ),
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
@@ -712,7 +708,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     ),
                                   ),
                                   SizedBox(height: height * 0.01),
-                                  Text(
+                                 const Text(
                                     'Restaurants',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 241, 92, 75),
@@ -734,7 +730,7 @@ class _HomeScreenState extends State<HomeScreen>
                           height: width * 0.3,
                           width: width * 0.3,
                           decoration: BoxDecoration(
-                            boxShadow: [
+                            boxShadow:const [
                               BoxShadow(
                                 color: Color.fromARGB(255, 146, 146, 146),
                                 blurRadius: 5.0,
@@ -746,11 +742,10 @@ class _HomeScreenState extends State<HomeScreen>
                               )
                             ],
                             borderRadius: BorderRadius.circular(20),
-                            gradient: LinearGradient(
+                            gradient:const LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                               colors: [
-                                //TODO: how to refine the gradient property
                                 Color.fromARGB(255, 218, 231, 164),
                                 Color(0xffF5F5F5),
                               ],
@@ -765,7 +760,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   width: width * 0.15,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(12),
-                                    color: Color(0xffE5EDFF),
+                                    color:const Color(0xffE5EDFF),
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
@@ -776,7 +771,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   ),
                                 ),
                                 SizedBox(height: height * 0.01),
-                                Text(
+                              const  Text(
                                   'Groceries',
                                   style: TextStyle(
                                     color: Color(0xff80A100),
@@ -797,7 +792,7 @@ class _HomeScreenState extends State<HomeScreen>
                           height: width * 0.3,
                           width: width * 0.3,
                           decoration: BoxDecoration(
-                            boxShadow: [
+                            boxShadow:const [
                               BoxShadow(
                                 color: Color.fromARGB(255, 146, 146, 146),
                                 blurRadius: 5.0,
@@ -810,11 +805,10 @@ class _HomeScreenState extends State<HomeScreen>
                             ],
                             // color: Colors.red,
                             borderRadius: BorderRadius.circular(20),
-                            gradient: LinearGradient(
+                            gradient:const LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                               colors: [
-                                //TODO: how to refine the gradient property
                                 Color.fromARGB(255, 245, 230, 190),
                                 Color(0xffF5F5F5),
                               ],
@@ -829,7 +823,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   width: width * 0.15,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(12),
-                                    color: Color(0xffE5EDFF),
+                                    color:const Color(0xffE5EDFF),
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
@@ -839,7 +833,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   ),
                                 ),
                                 SizedBox(height: height * 0.01),
-                                Text(
+                               const Text(
                                   'Restaurants',
                                   style: TextStyle(
                                     color: Color(0xffF7CA49),
@@ -861,7 +855,7 @@ class _HomeScreenState extends State<HomeScreen>
               //Nearby Merchants
               Padding(
                 padding: EdgeInsets.only(left: width / 15),
-                child: Text(
+                child:const Text(
                   'Nearby Merchants',
                   style: TextStyle(
                     fontSize: 18,
@@ -877,7 +871,7 @@ class _HomeScreenState extends State<HomeScreen>
             ],
           ),
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar:const CustomBottomNavigationBar(),
       ),
     );
   }
@@ -908,21 +902,18 @@ class NearbyMerchantsTile extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.red,
               borderRadius: BorderRadius.circular(20),
-              image: DecorationImage(
+              image:const DecorationImage(
                 image: AssetImage('assets/images/uberEats.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
           ),
-
-          //? 35 happy points
-          //TODO: Needs to fix the vector
           Padding(
             padding: EdgeInsets.only(top: height * 0.03),
             child: Container(
               height: height * 0.025,
               width: width * 0.6,
-              decoration: BoxDecoration(
+              decoration:const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
                     Color(0xff2C3659),
@@ -933,7 +924,7 @@ class NearbyMerchantsTile extends StatelessWidget {
               ),
               child: Padding(
                 padding: EdgeInsets.only(left: width * 0.02),
-                child: Align(
+                child:const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     '3% Happi Points | Upto 20 points',

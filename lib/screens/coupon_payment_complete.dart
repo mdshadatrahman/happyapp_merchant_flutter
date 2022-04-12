@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/Colors.dart';
@@ -21,13 +20,13 @@ class _BuyCouponsPaymentCompleteState extends State<BuyCouponsPaymentComplete> {
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffFAF9F9),
+        backgroundColor: const Color(0xffFAF9F9),
         body: Column(
           children: [
             //!TODO: need to add custom design in appbar
             Container(
               height: AppBar().preferredSize.height,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -77,7 +76,7 @@ class _BuyCouponsPaymentCompleteState extends State<BuyCouponsPaymentComplete> {
                           color: AppColors.white,
                           size: 35,
                         ),
-                        CircleAvatar(
+                        const CircleAvatar(
                           backgroundImage: NetworkImage(
                             'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
                           ),
@@ -106,7 +105,7 @@ class _BuyCouponsPaymentCompleteState extends State<BuyCouponsPaymentComplete> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: Colors.white,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Color.fromARGB(255, 213, 214, 218),
                             spreadRadius: 0,
@@ -122,7 +121,7 @@ class _BuyCouponsPaymentCompleteState extends State<BuyCouponsPaymentComplete> {
                           children: [
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
+                              children: const [
                                 Text(
                                   'Buy Coupons',
                                   style: TextStyle(
@@ -133,7 +132,7 @@ class _BuyCouponsPaymentCompleteState extends State<BuyCouponsPaymentComplete> {
                                 ),
                               ],
                             ),
-                            Text(
+                            const Text(
                               'Received Coupons',
                               style: TextStyle(
                                 fontSize: 18,
@@ -153,7 +152,7 @@ class _BuyCouponsPaymentCompleteState extends State<BuyCouponsPaymentComplete> {
                     child: Container(
                       height: height * 0.015,
                       width: width * 0.37,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Color(0xff3756CF),
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(50),
@@ -178,7 +177,7 @@ class _BuyCouponsPaymentCompleteState extends State<BuyCouponsPaymentComplete> {
                     style: GoogleFonts.montserrat(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
-                      color: Color(0xff201308),
+                      color: const Color(0xff201308),
                     ),
                   ),
                 ),
@@ -194,7 +193,7 @@ class _BuyCouponsPaymentCompleteState extends State<BuyCouponsPaymentComplete> {
                     style: GoogleFonts.montserrat(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
-                      color: Color(0xff201308),
+                      color: const Color(0xff201308),
                     ),
                   ),
                 ),
@@ -208,15 +207,15 @@ class _BuyCouponsPaymentCompleteState extends State<BuyCouponsPaymentComplete> {
           scale: 0.7,
           child: FloatingActionButton(
             onPressed: () {},
-            child: Icon(
+            child: const Icon(
               Icons.east,
               size: 35,
             ),
-            backgroundColor: Color(0xff462DAB),
+            backgroundColor: const Color(0xff462DAB),
             elevation: 0,
           ),
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

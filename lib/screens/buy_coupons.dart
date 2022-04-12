@@ -1,4 +1,3 @@
-
 import 'package:codecell_marchant_happ_app/screens/received_coupons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -22,13 +21,13 @@ class _BuyCouponsState extends State<BuyCoupons> {
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffFAF9F9),
+        backgroundColor: const Color(0xffFAF9F9),
         body: Column(
           children: [
             //!TODO: need to add custom design in appbar
             Container(
               height: AppBar().preferredSize.height,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -78,7 +77,7 @@ class _BuyCouponsState extends State<BuyCoupons> {
                           color: AppColors.white,
                           size: 35,
                         ),
-                        CircleAvatar(
+                        const CircleAvatar(
                           backgroundImage: NetworkImage(
                             'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
                           ),
@@ -101,7 +100,7 @@ class _BuyCouponsState extends State<BuyCoupons> {
                   GestureDetector(
                     onTap: () {
                       Get.off(
-                        () => ReceivedCoupons(),
+                        () => const ReceivedCoupons(),
                         transition: Transition.noTransition,
                       );
                     },
@@ -111,7 +110,7 @@ class _BuyCouponsState extends State<BuyCoupons> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: Colors.white,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Color.fromARGB(255, 213, 214, 218),
                             spreadRadius: 0,
@@ -127,7 +126,7 @@ class _BuyCouponsState extends State<BuyCoupons> {
                           children: [
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
+                              children: const [
                                 Text(
                                   'Buy Coupons',
                                   style: TextStyle(
@@ -138,7 +137,7 @@ class _BuyCouponsState extends State<BuyCoupons> {
                                 ),
                               ],
                             ),
-                            Text(
+                            const Text(
                               'Received Coupons',
                               style: TextStyle(
                                 fontSize: 18,
@@ -158,7 +157,7 @@ class _BuyCouponsState extends State<BuyCoupons> {
                     child: Container(
                       height: height * 0.015,
                       width: width * 0.37,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Color(0xff3756CF),
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(50),
@@ -184,7 +183,7 @@ class _BuyCouponsState extends State<BuyCoupons> {
             )
           ],
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }
@@ -206,7 +205,7 @@ class CouponsTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(() => BuyCouponsDetails());
+        Get.to(() => const BuyCouponsDetails());
       },
       child: Padding(
         padding: EdgeInsets.only(bottom: height * 0.03),
@@ -222,7 +221,7 @@ class CouponsTile extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: Colors.white,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Color.fromARGB(255, 213, 214, 218),
                           spreadRadius: 0,
@@ -237,7 +236,7 @@ class CouponsTile extends StatelessWidget {
                         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SizedBox(width: width * 0.175),
-                          RotatedBox(
+                          const RotatedBox(
                             quarterTurns: 1,
                             child: Text(
                               'No cash value',
@@ -257,7 +256,7 @@ class CouponsTile extends StatelessWidget {
                                 children: [
                                   SvgPicture.asset('assets/images/kfc.svg'),
                                   SizedBox(width: width * 0.03),
-                                  Text(
+                                  const Text(
                                     '25% OFF\nKFC',
                                     style: TextStyle(
                                       fontSize: 16,
@@ -268,7 +267,7 @@ class CouponsTile extends StatelessWidget {
                               ),
                               SizedBox(height: width * 0.02),
                               Row(
-                                children: [
+                                children: const [
                                   Text(
                                     '•  Expire date :**-**-***',
                                     style: TextStyle(
@@ -292,9 +291,9 @@ class CouponsTile extends StatelessWidget {
                       height: height * 0.03,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(2),
-                        color: Color(0xff4B99C4),
+                        color: const Color(0xff4B99C4),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'Best Seller',
                           style: TextStyle(

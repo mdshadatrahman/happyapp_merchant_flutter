@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:codecell_marchant_happ_app/utils/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -42,8 +44,8 @@ class _ReceivedCouponsState extends State<ReceivedCoupons>
         drawer: CustomDrawer(height: height, width: width),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
-          backgroundColor: Color(0xff3756CF),
-          child: Icon(Icons.add),
+          backgroundColor: const Color(0xff3756CF),
+          child: const Icon(Icons.add),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         appBar: NewGradientAppBar(
@@ -84,14 +86,14 @@ class _ReceivedCouponsState extends State<ReceivedCoupons>
               color: AppColors.white,
               size: 35,
             ),
-            CircleAvatar(
+            const CircleAvatar(
               backgroundImage: NetworkImage(
                 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
               ),
             ),
             SizedBox(width: width / 15)
           ],
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
@@ -100,24 +102,24 @@ class _ReceivedCouponsState extends State<ReceivedCoupons>
             ],
           ),
         ),
-        backgroundColor: Color(0xffFAF9F9),
+        backgroundColor: const Color(0xffFAF9F9),
         body: SingleChildScrollView(
           child: Column(
             children: [
               TabBar(
                 controller: _tabController,
                 isScrollable: true,
-                indicator: UnderlineTabIndicator(
+                indicator: const UnderlineTabIndicator(
                   borderSide: BorderSide(
                     width: 10.0,
                     color: Color(0xff3756CF),
                   ),
                 ),
                 tabs: [
-                  Container(
+                  SizedBox(
                     height: height * 0.07,
                     width: width * 0.4,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Add voucher',
                         style: TextStyle(
@@ -128,10 +130,10 @@ class _ReceivedCouponsState extends State<ReceivedCoupons>
                       ),
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     height: height * 0.07,
                     width: width * 0.4,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Create Coupons',
                         style: TextStyle(
@@ -144,33 +146,29 @@ class _ReceivedCouponsState extends State<ReceivedCoupons>
                   ),
                 ],
               ),
-              Container(
+              SizedBox(
                 height: height,
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    Container(
-                      child: Column(
-                        children: [
-                          SizedBox(height: height * 0.03),
-                          Container(
-                            child: SingleChildScrollView(
-                                child: Column(
-                              children: [
-                                CouponsTile(width: width, height: height),
-                                CouponsTile(width: width, height: height),
-                                CouponsTile(
-                                  width: width,
-                                  height: height,
-                                  isBestSeller: true,
-                                ),
-                              ],
-                            )),
-                          )
-                        ],
-                      ),
+                    Column(
+                      children: [
+                        SizedBox(height: height * 0.03),
+                        SingleChildScrollView(
+                            child: Column(
+                          children: [
+                            CouponsTile(width: width, height: height),
+                            CouponsTile(width: width, height: height),
+                            CouponsTile(
+                              width: width,
+                              height: height,
+                              isBestSeller: true,
+                            ),
+                          ],
+                        ))
+                      ],
                     ),
-                    Center(
+                    const Center(
                       child: Text('Empty'),
                     ),
                   ],
@@ -179,7 +177,7 @@ class _ReceivedCouponsState extends State<ReceivedCoupons>
             ],
           ),
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }
@@ -211,7 +209,7 @@ class tabbartest2 extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Colors.white,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Color.fromARGB(255, 213, 214, 218),
                     spreadRadius: 0,
@@ -227,7 +225,7 @@ class tabbartest2 extends StatelessWidget {
                   children: [
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         Text(
                           'Buy Coupons',
                           style: TextStyle(
@@ -238,7 +236,7 @@ class tabbartest2 extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Text(
+                    const Text(
                       'Received Coupons',
                       style: TextStyle(
                         fontSize: 18,
@@ -261,7 +259,7 @@ class tabbartest2 extends StatelessWidget {
             child: Container(
               height: height * 0.015,
               width: width * 0.52,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xff3756CF),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(50),
@@ -304,7 +302,7 @@ class tabbartest extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Colors.white,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Color.fromARGB(255, 213, 214, 218),
                     spreadRadius: 0,
@@ -320,7 +318,7 @@ class tabbartest extends StatelessWidget {
                   children: [
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         Text(
                           'Buy Coupons',
                           style: TextStyle(
@@ -331,7 +329,7 @@ class tabbartest extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Text(
+                    const Text(
                       'Received Coupons',
                       style: TextStyle(
                         fontSize: 18,
@@ -354,7 +352,7 @@ class tabbartest extends StatelessWidget {
             child: Container(
               height: height * 0.015,
               width: width * 0.49,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xff3756CF),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(50),
@@ -401,7 +399,7 @@ class CouponsTile extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: Colors.white,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Color.fromARGB(255, 213, 214, 218),
                           spreadRadius: 0,
@@ -416,7 +414,7 @@ class CouponsTile extends StatelessWidget {
                         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SizedBox(width: width * 0.175),
-                          RotatedBox(
+                          const RotatedBox(
                             quarterTurns: 1,
                             child: Text(
                               'No cash value',
@@ -436,7 +434,7 @@ class CouponsTile extends StatelessWidget {
                                 children: [
                                   SvgPicture.asset('assets/images/kfc.svg'),
                                   SizedBox(width: width * 0.03),
-                                  Text(
+                                  const Text(
                                     '25% OFF\nKFC',
                                     style: TextStyle(
                                       fontSize: 16,
@@ -447,7 +445,7 @@ class CouponsTile extends StatelessWidget {
                               ),
                               SizedBox(height: width * 0.02),
                               Row(
-                                children: [
+                                children: const [
                                   Text(
                                     '•  Expire date :**-**-***',
                                     style: TextStyle(
@@ -471,9 +469,9 @@ class CouponsTile extends StatelessWidget {
                       height: height * 0.03,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(2),
-                        color: Color(0xff4B99C4),
+                        color: const Color(0xff4B99C4),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'Best Seller',
                           style: TextStyle(
@@ -502,7 +500,6 @@ class CouponsTile extends StatelessWidget {
                   child: PopupMenuButton(
                     color: Colors.black,
                     onSelected: (value) {
-                      print(value);
                       if (value == 1) {
                         // Navigator.push(
                         //     context,
@@ -512,14 +509,14 @@ class CouponsTile extends StatelessWidget {
                       } else {}
                     },
                     itemBuilder: (context) => [
-                      PopupMenuItem(
+                      const PopupMenuItem(
                         child: Text(
                           "Delete",
                           style: TextStyle(color: Colors.white),
                         ),
                         value: 1,
                       ),
-                      PopupMenuItem(
+                      const PopupMenuItem(
                         child: Text(
                           "Edit",
                           style: TextStyle(color: Colors.white),
@@ -554,7 +551,7 @@ class CouponsTileBuy extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(() => BuyCouponsDetails());
+        Get.to(() => const BuyCouponsDetails());
       },
       child: Padding(
         padding: EdgeInsets.only(bottom: height * 0.03),
@@ -570,7 +567,7 @@ class CouponsTileBuy extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: Colors.white,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Color.fromARGB(255, 213, 214, 218),
                           spreadRadius: 0,
@@ -585,7 +582,7 @@ class CouponsTileBuy extends StatelessWidget {
                         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SizedBox(width: width * 0.175),
-                          RotatedBox(
+                          const RotatedBox(
                             quarterTurns: 1,
                             child: Text(
                               'No cash value',
@@ -605,7 +602,7 @@ class CouponsTileBuy extends StatelessWidget {
                                 children: [
                                   SvgPicture.asset('assets/images/kfc.svg'),
                                   SizedBox(width: width * 0.03),
-                                  Text(
+                                  const Text(
                                     '25% OFF\nKFC',
                                     style: TextStyle(
                                       fontSize: 16,
@@ -616,7 +613,7 @@ class CouponsTileBuy extends StatelessWidget {
                               ),
                               SizedBox(height: width * 0.02),
                               Row(
-                                children: [
+                                children: const [
                                   Text(
                                     '•  Expire date :**-**-***',
                                     style: TextStyle(
@@ -640,9 +637,9 @@ class CouponsTileBuy extends StatelessWidget {
                       height: height * 0.03,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(2),
-                        color: Color(0xff4B99C4),
+                        color: const Color(0xff4B99C4),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'Best Seller',
                           style: TextStyle(

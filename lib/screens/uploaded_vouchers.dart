@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../utils/Colors.dart';
@@ -20,13 +19,13 @@ class _UploadedVoucherState extends State<UploadedVoucher> {
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffFAF9F9),
+        backgroundColor: const Color(0xffFAF9F9),
         body: Column(
           children: [
             //!TODO: need to add custom design in appbar
             Container(
               height: AppBar().preferredSize.height,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -71,7 +70,7 @@ class _UploadedVoucherState extends State<UploadedVoucher> {
                           color: AppColors.white,
                           size: 35,
                         ),
-                        CircleAvatar(
+                        const CircleAvatar(
                           backgroundImage: NetworkImage(
                             'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
                           ),
@@ -95,7 +94,7 @@ class _UploadedVoucherState extends State<UploadedVoucher> {
                   GestureDetector(
                     onTap: () {
                       Get.off(
-                        () => AddVoucherCoupon(),
+                        () => const AddVoucherCoupon(),
                         transition: Transition.noTransition,
                       );
                     },
@@ -105,7 +104,7 @@ class _UploadedVoucherState extends State<UploadedVoucher> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: Colors.white,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Color.fromARGB(255, 213, 214, 218),
                             spreadRadius: 0,
@@ -121,7 +120,7 @@ class _UploadedVoucherState extends State<UploadedVoucher> {
                           children: [
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
+                              children: const [
                                 Text(
                                   'Receive points',
                                   style: TextStyle(
@@ -140,7 +139,7 @@ class _UploadedVoucherState extends State<UploadedVoucher> {
                                 ),
                               ],
                             ),
-                            Text(
+                            const Text(
                               'Uploaded\nvouchers',
                               style: TextStyle(
                                 fontSize: 18,
@@ -163,7 +162,7 @@ class _UploadedVoucherState extends State<UploadedVoucher> {
                     child: Container(
                       height: height * 0.015,
                       width: width * 0.45,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Color(0xff3756CF),
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(50),
@@ -214,7 +213,7 @@ class _UploadedVoucherState extends State<UploadedVoucher> {
             // )
           ],
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

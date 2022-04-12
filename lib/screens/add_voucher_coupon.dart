@@ -1,5 +1,4 @@
 import 'package:codecell_marchant_happ_app/screens/CouponVoucher/uploading_coupon_page.dart';
-import 'package:codecell_marchant_happ_app/screens/uploaded_vouchers.dart';
 import 'package:codecell_marchant_happ_app/utils/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -41,7 +40,7 @@ class _AddVoucherCouponState extends State<AddVoucherCoupon>
       child: Scaffold(
         key: _key,
         drawer: CustomDrawer(height: height, width: width),
-        backgroundColor: Color(0xffFAF9F9),
+        backgroundColor: const Color(0xffFAF9F9),
         appBar: NewGradientAppBar(
           title: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -67,7 +66,6 @@ class _AddVoucherCouponState extends State<AddVoucherCoupon>
           leading: GestureDetector(
             onTap: () {
               _key.currentState!.openDrawer();
-              print('tapped');
             },
             child: Icon(
               Icons.sort,
@@ -81,14 +79,14 @@ class _AddVoucherCouponState extends State<AddVoucherCoupon>
               color: AppColors.white,
               size: 35,
             ),
-            CircleAvatar(
+          const  CircleAvatar(
               backgroundImage: NetworkImage(
                 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
               ),
             ),
             SizedBox(width: width / 15)
           ],
-          gradient: LinearGradient(
+          gradient:const LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
@@ -108,17 +106,17 @@ class _AddVoucherCouponState extends State<AddVoucherCoupon>
               child: TabBar(
                 controller: _tabController,
                 isScrollable: true,
-                indicator: UnderlineTabIndicator(
+                indicator:const UnderlineTabIndicator(
                   borderSide: BorderSide(
                     width: 10.0,
                     color: Color(0xff3756CF),
                   ),
                 ),
                 tabs: [
-                  Container(
+                  SizedBox(
                     height: height * 0.08,
                     width: width * 0.4,
-                    child: Center(
+                    child:const Center(
                       child: Text(
                         'Receive points\nfrom uploads',
                         textAlign: TextAlign.center,
@@ -130,10 +128,10 @@ class _AddVoucherCouponState extends State<AddVoucherCoupon>
                       ),
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     height: height * 0.07,
                     width: width * 0.4,
-                    child: Center(
+                    child:const Center(
                       child: Text(
                         'Uploaded\nvouchers',
                         textAlign: TextAlign.center,
@@ -152,62 +150,58 @@ class _AddVoucherCouponState extends State<AddVoucherCoupon>
               height: height * 0.09,
             ),
             //Tabbar view
-            Container(
+            SizedBox(
               height: height * 0.6,
               child: TabBarView(
                 controller: _tabController,
                 children: [
                   SingleChildScrollView(
-                    child: Container(
-                      child: GestureDetector(
-                        onTap: () {
-                          Get.to(() => UploadingCouponPage());
-                        },
-                        child: Stack(
-                          children: [
-                            Center(
-                              child: SvgPicture.asset(
-                                'assets/images/rectangle.svg',
-                              ),
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.to(() =>const UploadingCouponPage());
+                      },
+                      child: Stack(
+                        children: [
+                          Center(
+                            child: SvgPicture.asset(
+                              'assets/images/rectangle.svg',
                             ),
-                            Padding(
-                              padding:
-                                  EdgeInsets.symmetric(vertical: width * 0.2),
-                              child: Column(
-                                children: [
-                                  Center(
-                                    child: Icon(
-                                      Icons.file_upload_outlined,
-                                      size: 50,
-                                    ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsets.symmetric(vertical: width * 0.2),
+                            child: Column(
+                              children:const [
+                                Center(
+                                  child: Icon(
+                                    Icons.file_upload_outlined,
+                                    size: 50,
                                   ),
-                                  Text(
-                                    'upload from your gallery',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w400),
-                                  )
-                                ],
-                              ),
+                                ),
+                                Text(
+                                  'upload from your gallery',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400),
+                                )
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
 
                   //Uploded voucher
-                  Center(
-                    child: Container(
-                      child: Text('Uploaded Voucher'),
-                    ),
+                 const Center(
+                    child: Text('Uploaded Voucher'),
                   ),
                 ],
               ),
             ),
           ],
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar:const CustomBottomNavigationBar(),
       ),
     );
   }

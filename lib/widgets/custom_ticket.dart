@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,7 +18,7 @@ class CustomTicket extends StatelessWidget {
       children: [
         Center(
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               boxShadow: [
                 BoxShadow(
                   color: Color.fromARGB(255, 213, 214, 218),
@@ -49,7 +48,7 @@ class CustomTicket extends StatelessWidget {
                     SizedBox(width: width * 0.05),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           '25% OFF',
                           style: TextStyle(
@@ -96,6 +95,7 @@ class CustomTicket extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
+                      // ignore: unnecessary_string_escapes
                       'assets/images/qr_img\ 1.png',
                     ),
                   ],
@@ -104,17 +104,17 @@ class CustomTicket extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(Icons.open_in_new_outlined),
+                    const Icon(Icons.open_in_new_outlined),
                     Text(
                       'Valid untill 03 March 2022',
                       style: TextStyle(
                         fontSize: 8,
-                        color: Color(
+                        color: const Color(
                           0xff000000,
                         ).withOpacity(0.3),
                       ),
                     ),
-                    Icon(Icons.info_outline)
+                    const Icon(Icons.info_outline)
                   ],
                 )
               ],

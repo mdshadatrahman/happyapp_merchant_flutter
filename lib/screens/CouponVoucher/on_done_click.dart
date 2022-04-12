@@ -1,13 +1,7 @@
-import 'package:codecell_marchant_happ_app/screens/uploaded_vouchers.dart';
 import 'package:codecell_marchant_happ_app/utils/drawer.dart';
 import 'package:codecell_marchant_happ_app/widgets/custom_ticket.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
-
 import '../../utils/Colors.dart';
 import '../../widgets/custom_bottom_navigation.dart';
 
@@ -43,7 +37,7 @@ class _OnDoneClickState extends State<OnDoneClick>
       child: Scaffold(
         key: _key,
         drawer: CustomDrawer(height: height, width: width),
-        backgroundColor: Color(0xffFAF9F9),
+        backgroundColor: const Color(0xffFAF9F9),
         appBar: NewGradientAppBar(
           title: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +63,6 @@ class _OnDoneClickState extends State<OnDoneClick>
           leading: GestureDetector(
             onTap: () {
               _key.currentState!.openDrawer();
-              print('tapped');
             },
             child: Icon(
               Icons.sort,
@@ -83,14 +76,14 @@ class _OnDoneClickState extends State<OnDoneClick>
               color: AppColors.white,
               size: 35,
             ),
-            CircleAvatar(
+            const CircleAvatar(
               backgroundImage: NetworkImage(
                 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
               ),
             ),
             SizedBox(width: width / 15)
           ],
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
@@ -110,17 +103,17 @@ class _OnDoneClickState extends State<OnDoneClick>
               child: TabBar(
                 controller: _tabController,
                 isScrollable: true,
-                indicator: UnderlineTabIndicator(
+                indicator: const UnderlineTabIndicator(
                   borderSide: BorderSide(
                     width: 10.0,
                     color: Color(0xff3756CF),
                   ),
                 ),
                 tabs: [
-                  Container(
+                  SizedBox(
                     height: height * 0.08,
                     width: width * 0.4,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Receive points\nfrom uploads',
                         textAlign: TextAlign.center,
@@ -132,10 +125,10 @@ class _OnDoneClickState extends State<OnDoneClick>
                       ),
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     height: height * 0.07,
                     width: width * 0.4,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Uploaded\nvouchers',
                         textAlign: TextAlign.center,
@@ -154,61 +147,57 @@ class _OnDoneClickState extends State<OnDoneClick>
               height: height * 0.09,
             ),
             //Tabbar view
-            Container(
+            SizedBox(
               height: height * 0.6,
               child: TabBarView(
                 controller: _tabController,
                 children: [
                   SingleChildScrollView(
-                    child: Container(
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            CustomTicket(width: width, height: height),
-                            Text(
-                              'Total Value X',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                              ),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          CustomTicket(width: width, height: height),
+                          const Text(
+                            'Total Value X',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
                             ),
-                            SizedBox(height: height * 0.01),
-                            Text(
-                              'Total Points given Y',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                              ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            'Total Points given Y',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
                             ),
-                            SizedBox(height: height * 0.01),
-                            ElevatedButton(
-                              onPressed: () {},
-                              child: Text('Post Offer'),
-                              style: ElevatedButton.styleFrom(
-                                primary: Color(0xff4B99C4),
-                              ),
-                            )
-                          ],
-                        ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: const Text('Post Offer'),
+                            style: ElevatedButton.styleFrom(
+                              primary: const Color(0xff4B99C4),
+                            ),
+                          )
+                        ],
                       ),
                     ),
                   ),
 
                   //Uploded voucher
-                  Center(
-                    child: Container(
-                      child: Text('Uploaded Voucher'),
-                    ),
+                  const Center(
+                    child: Text('Uploaded Voucher'),
                   ),
                 ],
               ),
             ),
           ],
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

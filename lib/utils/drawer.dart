@@ -17,7 +17,7 @@ class CustomDrawer extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
@@ -40,13 +40,13 @@ class CustomDrawer extends StatelessWidget {
                           onTap: () {
                             Get.back();
                           },
-                          child: Icon(
+                          child: const Icon(
                             Icons.arrow_back,
                             color: Colors.white,
                           ),
                         ),
                         SizedBox(width: width * 0.2),
-                        Text(
+                        const Text(
                           "Demo Hub",
                           style: TextStyle(
                             color: Colors.white,
@@ -58,7 +58,7 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   horizontalTitleGap: .1,
                   title: Text(
                     "Home",
@@ -69,7 +69,7 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   horizontalTitleGap: .1,
                   title: Text(
                     "Feed",
@@ -80,7 +80,7 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   horizontalTitleGap: .1,
                   title: Text(
                     "Notice",
@@ -91,7 +91,7 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   horizontalTitleGap: .1,
                   title: Text(
                     "Points",
@@ -102,7 +102,7 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   horizontalTitleGap: .1,
                   title: Text(
                     "Offer",
@@ -113,7 +113,7 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   horizontalTitleGap: .1,
                   title: Text(
                     "Statistics",
@@ -124,7 +124,7 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   horizontalTitleGap: .1,
                   title: Text(
                     "More",
@@ -149,11 +149,11 @@ class CustomDrawer extends StatelessWidget {
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: [
-                    Color(0xff152548).withOpacity(0.6),
-                    Color(0xff4200FF).withOpacity(0.6),
+                    const Color(0xff152548).withOpacity(0.6),
+                    const Color(0xff4200FF).withOpacity(0.6),
                   ],
                 ),
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(300),
                 ),
               ),
