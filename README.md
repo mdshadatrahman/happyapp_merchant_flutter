@@ -1,4 +1,4 @@
-# codecell_marchant_happ_app
+# marchant_happ_app_flutter
 
 A new Flutter project.
 
